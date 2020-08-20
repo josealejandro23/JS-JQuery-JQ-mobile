@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejemplo de JavaScript</title>
+        <meta charset="UTF-8" />
+    </head>
+
+    <body>
+        <!-- <script>
+        /* El método 'reduce' recibe como primer parámetro una función cuyo primer parámetro
+        es un valor que se arrastra entre cada proceso de un elemento del arreglo, el segundo 
+        parámetro de reduce es el valor inicial con el que inicia el acumulador (si no pasamos el 
+        segundo parámetro se inicia con el primer elemento del arreglo): */
+
+            const arreglo1 = [1, 2, 73, 3, 4, 120, 5, 18];
+            // Acumular todos los elementos que tienen un solo dígito
+            const cantidad = arreglo1.reduce(
+                (acumulador, elemento, indice, arreglo) => {
+                    if (elemento < 10) acumulador += elemento;
+                    return acumulador;
+                },
+                0
+            );
+            console.log(cantidad); // 15
+        </script> -->
+
+        <script>
+            /* El método 'reduceRight' es simila a 'reduce' con la diferencia que visita cada elemento del arreglo partiendo del final. */
+            const arreglo1 = [1, 2, 73, 3, 4, 120, 5, 18];
+            // Generar un nuevo arreglo con los elementos invertidos
+            const arreglo2 = arreglo1.reduceRight((acumulador, elemento, indice, arreglo) => {
+              acumulador.push(elemento);
+              return acumulador;
+            }, []);
+            console.log(arreglo2); // [18, 5, 120, 4, 3, 73, 2, 1]
+          </script>
+    </body>
+</html>

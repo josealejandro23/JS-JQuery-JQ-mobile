@@ -1,0 +1,30 @@
+<script>
+	var xhttp = new XMLHttpRequest();
+
+	xhttp.open("GET", "ejemploJson.json", true);
+
+	xhttp.send();
+
+	xhttp.onreadystatechange = function () {
+		if (this.readyState == 4 && this.status == 200) {
+			console.log(this.responseText);
+		}
+	};
+</script>
+
+<script>
+	var pet = new XMLHttpRequest();
+
+	var body = { numero: 9973 };
+	pet.open("POST", "https://sserver.insoft.co/api/EsPrimo/");
+	pet.setRequestHeader("authorization", "Basic InSoftPruebas" );
+	pet.send(JSON.stringify(body))
+	
+	pet.onreadystatechange = function(){
+		if(this.readyState == 4){
+			var res = JSON.parse(this.responseText);
+			console.log(this.responseText)
+			console.log(res.respuesta.primo)
+		}
+	}
+</script>

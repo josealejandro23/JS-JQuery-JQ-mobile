@@ -1,0 +1,11 @@
+<script>
+	fetch("https://randomuser.me/api/")
+		.then((data) => data.json())
+		.then(verResultado)
+
+	function verResultado(datos) {
+		console.log(datos.results[0].name.first + " " +datos.results[0].name.last);
+      console.log(datos.results[0].gender)
+      console.log(datos.results[0].location.street.name)
+	}
+</script>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ejemplo de jQuery</title>
+		<meta charset="UTF-8" />
+	</head>
+
+	<body>
+		<input
+			type="button"
+			value="Obtener el texto contenido en un párrafo"
+			id="boton1"
+		/><br />
+		<input
+			type="button"
+			value="Modificar el texto de un párrafo"
+			id="boton2"
+		/><br />
+		<input
+			type="button"
+			value="Modificar el texto de los elementos td de una tabla"
+			id="boton3"
+		/><br />
+		<p id="parrafo1">Texto del primer párrafo</p>
+		<table border="1">
+			<tr>
+				<td>celda 1,1</td>
+				<td>celda 1,2</td>
+				<td>celda 2,1</td>
+				<td>celda 2,2</td>
+			</tr>
+		</table>
+
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	</body>
+</html>
+<script>
+	let x = $(document);
+	x.ready(inicializarEventos);
+
+	function inicializarEventos() {
+		let x = $("#boton1");
+		x.click(extraerTexto);
+		x = $("#boton2");
+		x.click(modificarTexto);
+		x = $("#boton3");
+		x.click(modificarDatosTabla);
+	}
+
+	function extraerTexto() {
+		let x = $("#parrafo1");
+		alert(x.text());
+	}
+
+	function modificarTexto() {
+		let x = $("#parrafo1");
+		x.text("Nuevo texto del párrafo");
+	}
+
+	function modificarDatosTabla() {
+		let x = $("td");
+		x.text("texto nuevo");
+	}
+</script>

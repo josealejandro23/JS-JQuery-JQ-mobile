@@ -1,0 +1,23 @@
+<script>
+	var a;
+	function getDatos(callback) {
+		fetch("https://jsonplaceholder.typicode.com/comments")
+			.then((res) => res.json())
+			.then((res) => callback(res));
+	}
+
+	getDatos((res) => {
+		for (const post of res) {
+			console.log(post.body);
+		}
+	});
+</script>
+
+<script>
+	function suma(cb){
+		var x = 10 + 3
+		cb(x)
+	}
+
+	suma((res)=> console.log(res))
+</script>

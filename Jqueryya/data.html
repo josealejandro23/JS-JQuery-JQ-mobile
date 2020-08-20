@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>jQuery.data demo</title>
+		<style>
+			div {
+				color: blue;
+			}
+			span {
+				color: red;
+			}
+		</style>
+		<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+	</head>
+	<body>
+		<div>
+			The values stored were
+			<span></span>
+			and
+			<span></span>
+		</div>
+
+		<div id="div2">
+			<p data-prueba="Aquí estoy almacenando un valor de prueba">prueba</p>
+			<p id="p2">segunda etiqueta</p>
+			<p id="p3">datos</p>
+		</div>
+
+		<h2>Aquí voy a guardar algo</h2>
+		<script>
+			var div = $("div")[0];
+			$.data(div, "test", { primero: 16, segundo: "pizza!" });
+			$("span").first().text($.data(div, "test").primero);
+			$("span").last().text($.data(div, "test").segundo);
+
+			var div2 = $("#div2");
+			$.data(div2, "prueba", {
+				nombre: "alejandro",
+				apellido: "vargas",
+				hobbies: { exterior: "correr", interior: "leer" },
+			});
+			for (let i in $.data(div2, "prueba")) {
+				console.log(i);
+			}
+
+			var val = $("#p3");
+			$.data(val, "valor", "valor guardado");
+			console.log($.data(val));
+			console.log($.data(val, "valor"));
+			$.removeData(val, "valor");
+			console.log($.data(val, "valor"));
+
+			val.data("val2", "cambio de valor");
+			console.log(val.data("val2"));
+		</script>
+	</body>
+</html>

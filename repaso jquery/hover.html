@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	</head>
+	<body>
+		<div id="p1">
+			Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis,
+			possimus.
+      </div>
+      <br>
+		<div id="p2">
+			Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore,
+			fugiat accusamus? Enim quis minus aliquam, adipisci repellendus eum
+			asperiores magni velit. Amet, cum?
+      </div>
+      <br>
+		<div id="p3">
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
+			fugiat ipsum ab in sint consequatur atque ad libero!
+		</div>
+	</body>
+</html>
+<script>
+	$(document).ready(()=>{
+	   $("div").hover(cambiarColor,removerColor)
+	})
+
+	function cambiarColor(){
+	   $(this).css("color", "red")
+	}
+
+	function removerColor(){
+      $(this).css("color", "black")
+	}
+</script>

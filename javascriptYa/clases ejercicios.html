@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <div id="menu"></div>
+
+    <script>
+      class Menu {
+        constructor() {
+          this.enlaces = [];
+          this.descripcion = [];
+        }
+
+        insertar(enlace, descripcion) {
+          this.enlaces.push(enlace);
+          this.descripcion.push(descripcion);
+        }
+
+        mostrar(elemento) {
+          let cadena = "<div>";
+          for (let x = 0; x < this.enlaces.length; x++)
+            cadena += `[<a href="${this.enlaces[x]}">${this.descripcion[x]}</a>]`;
+          cadena += "</div>";
+          document.getElementById(elemento).innerHTML = cadena;
+        }
+      }
+
+      window.addEventListener("DOMContentLoaded", iniciar, false);
+
+      function iniciar() {
+        const menu = new Menu();
+        menu.insertar("http://www.google.com", "Google");
+        menu.insertar("http://www.bing.com", "Bing");
+        menu.insertar("http://www.yahoo.com", "Yahoo");
+        menu.mostrar("menu");
+      }
+    </script>
+  </body>
+</html>

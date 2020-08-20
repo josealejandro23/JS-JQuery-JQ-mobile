@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    <script>
+      let arreglo1 = [10, 20, 30, 40, 50, 60, 10, 20, 30];
+      // Indice donde se almacena el valor 30
+      console.log(arreglo1.indexOf(30)); // 2
+      // Indice donde se almacena un valor inexistente
+      console.log(arreglo1.indexOf(100)); // -1
+      // Indice donde se almacena el valor 20
+      // buscándo desde el final
+      console.log(arreglo1.lastIndexOf(20)); // 7
+      // Indice donde se almacena el valor 10
+      // comenzando la búsqueda en la posición 5
+      console.log(arreglo1.indexOf(10, 5)); // 6
+      // Existe el valor 50 en el arreglo?
+      console.log(arreglo1.includes(50)); // true
+      // Existe el valor 100 en el arreglo?
+      console.log(arreglo1.includes(100)); // false
+
+/*       Al método includes también podemos pasar un segundo parámetro que indica a partir de que posición dentro del arreglo comenzar a buscar:
+ */
+    // Existe el valor 100 en el arreglo a partir de
+    // la posición 2?
+    console.log(arreglo1.includes(20, 2));
+    </script>
+  </body>
+</html>

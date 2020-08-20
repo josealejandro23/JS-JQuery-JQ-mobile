@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Calculadora{
+            constructor(a,b){
+                this.a = a;
+                this.b = b;
+            }
+            sumar(){
+                var res = this.a + this.b;
+                document.write(res + '<br>') 
+                return res
+            }
+            restar(){
+                var res = this.a - this.b;
+                document.write(res + '<br>')
+            }
+            multiplicar(){
+                var res = this.a * this.b;
+                document.write(res + '<br>') 
+            }
+            dividir(){
+                var res = this.a / this.b;
+                document.write(res + '<br>') 
+            }
+        }
+
+        class CalculadoraCientifica extends Calculadora{
+            constructor(a,b,c){
+                super(a,b)
+                this.c = c;
+            }
+            potencia(){
+                var res = Math.pow(this.a,this.b);
+                document.write(res + '<br>') 
+            }
+            raiz(){
+                var res = Math.trunc(Math.sqrt(this.a));
+                document.write(res + '<br>') 
+            }
+            sumaymultiplicacion(){
+                var res = super.sumar() + this.c
+                document.write(res + '<br>') 
+            } 
+        }
+
+        calculadora = new Calculadora (5,1)
+        calculadora.sumar()
+        calculadora.restar()
+        calculadora.multiplicar()
+        calculadora.dividir()
+        document.write('<hr>')
+        cientifica = new CalculadoraCientifica(5,5,2)
+        /* cientifica.sumar()
+        cientifica.restar()
+        cientifica.multiplicar()
+        cientifica.dividir()
+        cientifica.potencia()
+        cientifica.raiz() */
+        cientifica.sumaymultiplicacion()
+    </script>
+</body>
+</html>

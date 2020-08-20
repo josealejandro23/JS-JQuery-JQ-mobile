@@ -1,0 +1,29 @@
+<!-- <script>
+    var res = 0;
+    for(var i = 0; ;i++){
+        res = Math.pow(10,i);
+        if(isFinite(res)){
+            document.write(res + '<br>');
+        }else{
+            document.write('límite alcanzado' + i);
+            break
+        }
+    }
+</script> -->
+
+<script>
+    var valor1 = parseFloat(prompt('ingrese el primer número'));
+    var valor2 = parseFloat(prompt('ingrese el segundo número'));
+
+    if(isNaN(valor1) || isNaN(valor2)){
+        alert('alguno de los valores no es un número');
+    }else{
+        var res = valor1 * valor2;
+        if(isFinite(res)){
+            alert('el resultado es: ' + res);
+        }else{
+            alert('resultado infinito papu');
+        }
+    }
+
+</script>

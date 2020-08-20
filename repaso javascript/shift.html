@@ -1,0 +1,21 @@
+<script>
+   var vector = [];
+   var val;
+   do{
+      val = parseInt(prompt("ingrese un valor"));
+      if(val == 0) break
+      else{
+         val < 100 ? vector.unshift(val) : vector.push(val)
+      }
+   }while(val != 0)
+
+   for (const val of vector) {
+      document.write(val);
+   }
+   
+   document.write("<br> extraer el primer elemento <br>");
+   vector.shift()
+   for (const val of vector) {
+      document.write(val)
+   }
+</script>

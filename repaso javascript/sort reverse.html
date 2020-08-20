@@ -1,0 +1,21 @@
+<script>
+	var vec = [];
+
+	for (var i = 0; i < 10; i++) {
+		vec.push(Math.round(Math.random() * 10));
+	}
+
+	document.write(vec + "<br>");
+
+	vec.sort((a, b) => {
+		if(a>b){
+         return 1;
+      }else return -1 
+	});
+
+	document.write(vec + "<br>");
+
+	vec.reverse();
+
+	document.write(vec);
+</script>

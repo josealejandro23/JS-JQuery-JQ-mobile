@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ejemplo de JavaScript</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+
+<script>
+  class Dado {
+    constructor() {
+      this.cara=1;
+    }
+    
+    get valor() {
+      return this.cara;
+    }
+    
+    set valor(v) {
+      this.cara=v;
+    }
+    
+    imprimir() {
+      document.write(this.valor+'<br>');
+    }
+  }
+  
+  const dado1=new Dado();
+  dado1.imprimir();
+  dado1.valor=6;
+  dado1.imprimir();
+  
+</script>
+
+</body>
+</html>

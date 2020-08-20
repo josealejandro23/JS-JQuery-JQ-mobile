@@ -1,0 +1,24 @@
+<!-- El operador Spread permite descomponer una estructura de datos en elementos individuales. Es la operación inversa de los parámetros Rest.
+
+La sintaxis se aplica anteponiendo al nombre de la variable tres puntos: -->
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function sumar(a, b, c, d) {
+          var res = 0;
+        for(i in arguments){
+            res += arguments[i];
+        }
+        return res;
+      }
+      var vector = [1, 2, 3, 4];
+      document.write(sumar(...vector));
+    </script>
+  </body>
+</html>

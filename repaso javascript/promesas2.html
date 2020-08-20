@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		/>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<table class="table table-striped" id="tabla1"></table>
+			</div>
+		</div>
+	</body>
+</html>
+
+<script>
+	addEventListener("DOMContentLoaded", inicio, false);
+
+	function promesa() {
+		return new Promise((resolve, reject) => {
+			fetch("https://jsonplaceholder.typicode.com/users")
+				.then((response) => response.json())
+				.then((datos) => resolve(datos))
+				.catch(() => reject(new Error("error en db")));
+		});
+	}
+
+	async function inicio() {
+		try {
+			var datos = await promesa();
+			imprimir(datos);
+		} catch (e) {
+			console.log(e);
+		}
+	}
+
+	inicio()
+
+	function imprimir(datos) {
+		var tabla = document.getElementById("tabla1");
+		tabla.insertAdjacentHTML(
+			"beforeend",
+			"<tr><th>Nombre</th><th>Email</th><th>Télefono</th><th>Ciudad</th></tr>"
+		);
+		for (let usuario of datos) {
+			tabla.insertAdjacentHTML(
+				"beforeend",
+				`<tr><td>${usuario.name}</td>
+            <td>${usuario.email}</td>
+            <td>${usuario.phone}</td>
+            <td>${usuario.city}</td></tr>`
+			);
+		}
+	}
+</script>

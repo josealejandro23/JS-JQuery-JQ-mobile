@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Ejemplo de JavaScript</title>
+  <meta charset="UTF-8">
+</head>
+
+<body>
+  <script>
+/* Al método 'every' debemos pasar una función anónima que procesa cada elemento del arreglo. Si todos los elementos cumplen la condición impuesta dentro de la función, luego el método 'every' retorna true.
+En cambio con el método 'some' con que un elemento cumpla la condición impuesta luego el método retorna true.
+every (todos) some (alguno) */
+
+    const personas = [
+      {
+        nombre: "pedro",
+        edad: 34
+      },
+      {
+        nombre: "ana",
+        edad: 54
+      },
+      {
+        nombre: "carlos",
+        edad: 12
+      },
+      {
+        nombre: "maría",
+        edad: 22
+      },
+      {
+        nombre: "oscar",
+        edad: 72
+      }
+    ];
+    // Todas las personas tienen una edad menor a 100?
+    console.log(personas.every((elemento, indice, arreglo) => elemento.edad < 100)); // true
+    // Todas las personas son mayor de edad?
+    console.log(personas.every((elemento, indice, arreglo) => elemento.edad >= 18)); // false
+    // Todas las personas tienen un nombre con 6 o menos caracteres?
+    console.log(personas.every((elemento, indice, arreglo) => elemento.nombre.length <= 6)); // true
+    // Alguna persona tiene 100 años de edad?
+    console.log(personas.some((elemento, indice, arreglo) => elemento.edad == 100)); // false
+    // Alguna persona es menor de edad?
+    console.log(personas.some((elemento, indice, arreglo) => elemento.edad <= 18)); // true
+  </script>
+</body>
+
+</html>

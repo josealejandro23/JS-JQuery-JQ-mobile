@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejemplo de JavaScript</title>
+        <meta charset="UTF-8" />
+    </head>
+
+    <body>
+        <script>
+            const personas = [
+                {
+                    nombre: "pedro",
+                    edad: 34,
+                },
+                {
+                    nombre: "ana",
+                    edad: 54,
+                },
+                {
+                    nombre: "carlos",
+                    edad: 12,
+                },
+                {
+                    nombre: "maría",
+                    edad: 22,
+                },
+                {
+                    nombre: "oscar",
+                    edad: 72,
+                },
+            ];
+            // Recuperar todas las personas mayores de edad
+            const personasmayores = personas.filter(
+                (elemento, indice, arreglo) => elemento.edad >= 18
+            );
+            console.log(personasmayores); // [{nombre: "pedro",edad: 34},{nombre: "ana",edad: 54},
+            //  {nombre: "maría",edad: 22},{nombre: "oscar",edad: 72}]
+        </script>
+    </body>
+</html>

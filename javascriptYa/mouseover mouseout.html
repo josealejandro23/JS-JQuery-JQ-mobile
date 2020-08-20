@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="titulo" style="color: black; background-color: burlywood;" >Hola, prueba mouseover mouseout</h1>
+</body>
+<script>
+    window.addEventListener('DOMContentLoaded',inicio,false);
+
+    function inicio(){
+        titulo = document.getElementById('titulo');
+        titulo.addEventListener('mouseover',sobreTitulo,false);
+        titulo.addEventListener('mouseout',mousefuera,false);
+    }
+
+    function sobreTitulo(){
+        titulo.style.backgroundColor = 'yellow';
+        titulo.style.color = 'red';
+    }
+
+    function mousefuera(){
+        titulo.style.backgroundColor = 'burlywood';
+        titulo.style.color = 'black';
+    }
+</script>
+</html>
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Ejemplo de JavaScript</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+
+  <div style="width:200px;height:200px;background:#0000ff" id="recuadro1">    
+  </div>
+
+<script>
+  addEventListener('DOMContentLoaded',inicio,false);
+
+  function inicio()
+  {
+    document.getElementById('recuadro1').addEventListener('mouseover',entrada,false);
+    document.getElementById('recuadro1').addEventListener('mouseout',salida,false);
+  }
+
+  function entrada()
+  {
+    document.getElementById('recuadro1').style.borderRadius='30px';
+  }
+
+  function salida()
+  {
+    document.getElementById('recuadro1').style.borderRadius='0px';
+  }
+</script>
+  
+</body>
+</html> -->

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>jQuery.isArray demo</title>
+      <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+      <style>
+         .red{
+            color:red;
+         }
+      </style>
+	</head>
+	<body>
+      <input type="checkbox"checked="false">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox" checked="true">
+      <input type="checkbox">
+      <input type="checkbox" checked= "true">
+      <input type="checkbox">
+      <p id="txt">texto</p>
+	</body>
+</html>
+<script>
+   $("input:checkbox").prop("checked", function(){
+      return !$(this).is(":checked") 
+   })
+
+   $("p#txt").attr("title","Título principal")
+
+   $("p").prop("class","red")
+
+   $("p#txt").click(function(){
+      $(this).removeAttr("title")
+   })
+
+   var $input = $("input:checkbox");
+   $input.each(function(){
+      $(this).prop("checked", !$(this).is(":checked") )
+   })
+
+   $("input:checkbox").click()
+  /*  $("div.abc[name=lado]")
+   $("#objeto")
+   $(".clase")
+   $("p:first")
+   $("div").first()
+   $(":not(p)") */
+
+   $(console.log("Hola esto es un saludo mediante JQuery"))
+</script>

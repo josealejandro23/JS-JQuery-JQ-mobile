@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const diccionario = new Map([
+            ['casa','house'],
+            ['rojo', 'red'],
+            ['perro', 'dog']
+        ])
+        
+        for(let [elemento,valor] of diccionario){
+            document.write(`${elemento} = ${valor} <br>`)
+        }
+        //diccionario.set(prompt('Ingrese una palabra'),prompt('ingrese la definición'));
+        //var busqueda = prompt('ingrese la palabra a buscar');
+
+        /* if(diccionario.has(busqueda)) document.write(`${busqueda} = ${diccionario.get(busqueda)}`)
+        else{
+            alert(`La palabra ${busqueda} no figura en el diccionario`)
+        } */
+
+        
+    </script>
+</body>
+</html>

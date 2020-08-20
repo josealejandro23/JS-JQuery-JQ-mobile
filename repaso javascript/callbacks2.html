@@ -1,0 +1,48 @@
+<script>
+	function inicio(cb, cb2, cb3, cb4, cb5, cb6) {
+		console.log("primera funcion");
+		setTimeout(function () {
+			cb(cb2, cb3, cb4, cb5, cb6);
+		}, 1000);
+	}
+
+	function callback1(cb2, cb3, cb4, cb5, cb6) {
+		console.log("callback uno");
+		setTimeout(function () {
+			cb2(cb3, cb4, cb5, cb6);
+		}, 1000);
+	}
+
+	function callback2(cb3, cb4, cb5, cb6) {
+		console.log("callback dos");
+		setTimeout(() => {
+			cb3(cb4, cb5, cb6);
+		}, 1000);
+	}
+
+	function callback3(cb4, cb5, cb6) {
+		console.log("callback tres");
+		setTimeout(() => {
+			cb4(cb5,cb6);
+		}, 1000);
+	}
+
+	function callback4(cb5,cb6) {
+		console.log("callback cuatro");
+		setTimeout(() => {
+			cb5(cb6);
+		}, 1000);
+	}
+
+	function callback5(cb6) {
+	     console.log("callback cinco");
+	     setTimeout(function (){
+	        cb6()
+	     }, 1000)
+	  }
+
+	  function callback6(){
+	     console.log("Soy el sexto y último callback del callback hell")
+	  }
+	inicio(callback1, callback2, callback3, callback4, callback5, callback6);
+</script>

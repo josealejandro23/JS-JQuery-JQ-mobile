@@ -1,0 +1,11 @@
+<script>
+   var pet = new XDomainRequest();
+   pet.open("get","https://randomuser.me/api/")
+
+   pet.onload = function(){
+      var res = pet.responseText;
+      console.log(res)
+   }
+
+   pet.send()
+</script>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <script>
+        var sueldos = [];
+        var salario;
+        var suma = 0;
+        for(let i = 0; ;i++){
+            salario = parseInt(prompt('ingrese el salario'));
+            if(salario != 0){
+                sueldos.push(salario)
+                suma = suma + sueldos[i];
+            }else{
+                break;
+            }
+        }
+        document.write('la suma de los salarios es: ' + suma + '<br>');
+        document.write(sueldos);
+    </script> -->
+
+    <script>
+        var vector = [];
+        var suma;
+        for(var i = 0; i < 5; i++){
+            var random = parseInt(Math.random()*1000);
+            vector.push(random);
+        }
+
+        for (i = 0; i<vector.length; i++){
+            document.write(vector[i] + '<br>');
+        }
+
+        suma = vector.pop() + vector.pop();
+        document.write('la suma de los últimos dos elementos es: ' + suma + '<br>');
+        document.write('la longitud del vector es: ' + vector.length + '<br>' + 'componentes restantes: <br>');
+
+        for (i = 0; i<vector.length; i++){
+            document.write(vector[i] + '<br>');
+        }
+    </script>
+</body>
+</html>

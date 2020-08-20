@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Ejemplo de JavaScript</title>
+  <meta charset="UTF-8">
+</head>
+
+<body>
+  <script>
+/* El método 'copyWithin' permite copiar algunas componentes de un arreglo en otra parte del mismo arreglo.
+ En ningún caso permite redimensionarlo. */
+
+    let arreglo1 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    // Copiar a partir de la posición cero del arreglo
+    // los elementos comprendidos entre las posiciones
+    // 5 y 8
+    arreglo1.copyWithin(0, 5, 8);
+    console.log(arreglo1); // [6, 7, 8, 4, 5, 6, 7, 8, 9]
+    arreglo1 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    // Copiar a partir de la posición cero del arreglo
+    // los elementos comprendidos desde la posición 5
+    // hasta el final
+    arreglo1.copyWithin(0, 5);
+    console.log(arreglo1); // [6, 7, 8, 9, 5, 6, 7, 8, 9]    
+    arreglo1 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    // Copiar a partir de la posición cero los dos últimos
+    // elementos del arreglo
+    arreglo1.copyWithin(0, -2);
+    console.log(arreglo1); // [8, 9, 3, 4, 5, 6, 7, 8, 9]
+  </script>
+</body>
+
+</html>

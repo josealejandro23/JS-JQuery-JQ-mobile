@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ejemplo de jQuery</title>
+		<meta charset="UTF-8" />
+	</head>
+
+	<body>
+		<div id="parrafos">
+			<p>
+				párrafo 1 - párrafo 1 - párrafo 1 - párrafo 1 - párrafo 1 - párrafo
+				1 - párrafo 1 - párrafo 1 - párrafo 1 - párrafo 1 - párrafo 1 -
+				párrafo 1 - párrafo 1 - párrafo 1 - párrafo 1 - párrafo 1 - párrafo
+				1 - párrafo 1 - párrafo 1 - párrafo 1 - párrafo 1 - párrafo 1 -
+				párrafo 1 - párrafo 1 - párrafo 1 - párrafo 1 - párrafo 1 - párrafo
+				1 - párrafo 1 - párrafo 1 - párrafo 1 - párrafo 1
+			</p>
+			<p>párrafo 2 - párrafo 2 - párrafo 2 - párrafo 2</p>
+			<p>
+				párrafo 3 - párrafo 3 - párrafo 3 - párrafo 3 - párrafo 3 - párrafo
+				3 - párrafo 3 - párrafo 3 - párrafo 3 - párrafo 3 - párrafo 3 -
+				párrafo 3 - párrafo 3 - párrafo 3 - párrafo 3 - párrafo 3 - párrafo
+				3 - párrafo 3 - párrafo 3 - párrafo 3 - párrafo 3 - párrafo 3 -
+				párrafo 3 - párrafo 3 - párrafo 3 - párrafo 3 - párrafo 3 - párrafo
+				3
+			</p>
+			<p>párrafo 4 - párrafo 4 - párrafo 4 - párrafo 4 - párrafo 4</p>
+		</div>
+
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	</body>
+</html>
+
+<script>
+	let x = $(document);
+	x.ready(inicializarEventos);
+
+	function inicializarEventos() {
+		let x = $("#parrafos p");
+		x.each(resaltarParrafos);
+	}
+
+	function resaltarParrafos() {
+		let x = $(this);
+		if (x.text().length < 100) {
+			x.css("background-color", "#ff0");
+		}
+	}
+</script>

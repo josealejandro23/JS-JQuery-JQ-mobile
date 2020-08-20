@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const cliente1 = {
+        nombre: "Juan",
+        saldo: 0,
+        imprimir() {
+          document.write(
+            `el nombre es ${this.nombre} <br> Saldo: ${this.saldo} <br>`
+          );
+        },
+        depositar(a) {
+          this.saldo += a;
+        },
+        retirar(a) {
+          this.saldo -= a;
+        },
+      };
+      cliente1.imprimir();
+      cliente1.depositar(100);
+      cliente1.imprimir();
+      cliente1.retirar(50);
+      cliente1.imprimir();
+    </script>
+  </body>
+</html>

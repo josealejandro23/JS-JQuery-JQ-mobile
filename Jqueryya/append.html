@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>append demo</title>
+		<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+	</head>
+	<body>
+		<p>Aquí va la palabra:</p>
+
+		<div><span>Texto texto</span></div>
+
+		<h1>Este es el título y sigue el subtítulo: </h1>
+
+		<script>
+			$("p").append("<strong>Hola</strong>");
+
+			$("div span").append("<strong> y más texto</strong>")
+
+			$("h1").append("<h2> Yo soy el subtítulo </h2>")
+
+			$("h1").prepend("<h3>Este texto está añadido con preppend antes del título</h3>")
+		</script>
+	</body>
+</html>

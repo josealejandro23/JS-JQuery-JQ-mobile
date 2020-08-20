@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Persona{
+            constructor(_nombre, _edad){
+                this._nombre = null
+                this._edad = null
+                this.control = true
+            }
+            set nombre(n){
+                this._nombre = n
+            }
+            get nombre(){
+                return this._nombre
+            }
+            set edad(edad){
+                if(edad >= 0){
+                    this._edad = edad
+                }else{
+                    document.write("la edad no puede ser un número negativo")
+                    this.control = false;
+                }
+            }
+            get edad(){
+                return this._edad
+            }
+            imprimir(){
+                if(this.control){
+                    document.write(`${this.nombre} de edad ${this.edad}`)
+                }
+            }
+        }
+
+        persona1 = new Persona()
+        persona1.nombre = 'José'
+        persona1.edad = 24
+        persona1.imprimir()
+    </script>
+</body>
+</html>

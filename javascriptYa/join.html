@@ -1,0 +1,18 @@
+<!-- <script>
+    var vec=[10,20,30,40,50]; 
+    var cadena=vec.join('-');
+    document.write(cadena + '<br>');
+  </script> -->
+
+  <script>
+      var personas = [];
+      for(var i = 0; i<5; i++){
+          personas[i] = prompt('ingrese el nombre de la persona','persona ' + (i+1));
+      }
+      document.write('vector almacenado <br>');
+      for(i =0; i<personas.length;i++){
+          document.write(personas[i]);
+      }
+      var nuevo = personas.join('<br>');
+      document.write(nuevo);
+  </script>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="">
+        Seleccione el tipo de pizza: <br>
+        <select name="pizzas[]" id="pizzas" size="6" onchange="mostrarPrecios()" multiple>
+            <option value="1000">mozarella</option>
+            <option value="2000">napolitana</option>
+            <option value="3000">hawaiana</option>
+	    <option value="1000">mozarella</option>
+            <option value="2000">napolitana</option>
+            <option value="3000">hawaiana</option>
+            <br>
+        </select>
+ 	
+    </form>
+el precio es: <input type="text" name="precios" id="precio">
+    <script>
+        function mostrarPrecios(){
+            seleccion = document.getElementById('pizzas');
+            document.getElementById('precio').value = seleccion.options[seleccion.selectedIndex].value;
+        }
+    </script>
+
+    
+</body>
+</html>

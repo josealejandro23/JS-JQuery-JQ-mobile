@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Ejemplo de JavaScript</title>
+  <meta charset="UTF-8">
+</head>
+
+<body>
+  <script>
+    const arreglo1 = [9, 9, 9, 9, 9, 9, 9];
+    // fijamos el valor 3 a todas las componentes del arreglo
+    arreglo1.fill(3);
+    console.log(arreglo1); // [3, 3, 3, 3, 3, 3, 3]
+    // fijamos el valor 0 desde la componente 3 del arreglo
+    // hasta el final
+    arreglo1.fill(0, 3);
+    console.log(arreglo1); // [3, 3, 3, 0, 0, 0, 0]
+    // fijamos el valor 5 a todas las componentes
+    arreglo1.fill(5);
+    console.log(arreglo1); // [5, 5, 5, 5, 5, 5, 5]
+    // fijamos el valor 5 desde la componente 3 hasta
+    // la componente 5 sin incluirla
+    arreglo1.fill(100, 3, 5);
+    console.log(arreglo1); // [5, 5, 5, 100, 100, 5, 5]
+    // fijamos el valor 5 a todas las componentes
+    arreglo1.fill(5);
+    console.log(arreglo1); // [5, 5, 5, 5, 5, 5, 5]
+    // fijamos el valor 100 en las dos últimas componentes
+    arreglo1.fill(100, -2);
+    console.log(arreglo1); // [5, 5, 5, 5, 5, 100, 100]
+    // fijamos el valor 5 a todas las componentes
+    arreglo1.fill(5);
+    console.log(arreglo1); // [5, 5, 5, 5, 5, 5, 5]
+    // fijamos el valor 100 en la antepenúltima y penúltima
+    // posición
+    arreglo1.fill(100, -3, -1);
+    console.log(arreglo1); // [5, 5, 5, 5, 100, 100, 5]
+  </script>
+</body>
+
+</html>

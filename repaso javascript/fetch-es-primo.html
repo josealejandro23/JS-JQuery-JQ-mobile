@@ -1,0 +1,18 @@
+<script>
+	const url = "https://sserver.insoft.co/api/EsPrimo/";
+	const msg = { numero: 9973 };
+
+	fetch(url, {
+		method: "post",
+		headers: { Authorization: "Basic InSoftPruebas" },
+		body: JSON.stringify(msg),
+	})
+		.then((dato) => dato.json())
+		.then((res) => {
+			if (res.encabezado.resultado) {
+				if (res.respuesta.primo) console.log("es primo");
+				else console.log("no es primo");
+			}
+		})
+		.catch("no se puede ingresar");
+</script>

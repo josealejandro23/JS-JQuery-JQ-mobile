@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ejemplo de JavaScript</title>
+		<meta charset="UTF-8" />
+	</head>
+	<body onLoad="activarPrimerControl()">
+		<form>
+			Ingrese su nombre:
+			<input type="text" id="nombre" /><br />
+			Ingrese su edad:
+			<input type="text" id="edad" /><br />
+			<input type="button" value="Confirmar" />
+		</form>
+	</body>
+	<script>
+		function activarPrimerControl() {
+			document.getElementById("edad").focus();
+		}
+	</script>
+</html>

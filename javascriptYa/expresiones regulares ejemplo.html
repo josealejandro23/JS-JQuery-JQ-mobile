@@ -1,0 +1,44 @@
+<!-- Ingresar una patente de un auto de argentina y luego mostrar un mensaje si es correcto o no su valor. Toda patente está 
+    constituida por 2 letras, tres números y finalmente 2 letras (ej. aa123bb ) -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Ejemplo de JavaScript</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+
+<script>
+  var patente=prompt('Ingrese una patente','');
+  var patron=/^[a-z]{2}[0-9]{3}[a-z]{2}$/;
+  if (patron.test(patente))
+    alert('La patente ingresada es correcta');
+  else
+    alert('La patente ingresada no es correcta');
+</script>
+  
+</body>
+</html> -->
+
+<!-- Ingresar una oración y mostrar si se ingresó uno o más números con exactamente 5 dígitos.
+
+Para resolver este problema debemos definir un patrón que identifique un número con exactamente cinco dígitos y que antes y después de este tenga un espacio en blanco. Para identificar el espacio
+ en blanco debemos introducir en la expresión regular el carácter de escape y la letra s, es decir \s -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+      var oracion = prompt("Ingrese una oracion", "");
+      var patron = /\s[0-9]{5}\s/;
+      if (patron.test(oracion))
+        alert("La oración tiene un número de 5 dígitos");
+      else alert("La oración no tiene un número de 5 dígitos");
+    </script>
+  </body>
+</html>

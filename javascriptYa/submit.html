@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ejemplo de JavaScript</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+
+  <form method="post" action="procesar.php" id="formulario1">
+    Ingrese clave:
+    <input type="text" id="clave1" name="clave1" size="20" required>
+    <br>
+    Repita clave:
+    <input type="text" id="clave2" name="clave2" size="20" required>
+    <br>
+    <input type="submit" id="confirmar" name="confirmar" value="Confirmar">
+  </form>
+
+<script>
+  window.addEventListener('DOMContentLoaded', inicio, false);
+
+  function inicio() {
+    document.getElementById("formulario1").addEventListener('submit', validar, false);
+  }
+
+  function validar(evt) {
+    var cla1 = document.getElementById("clave1");
+    var cla2 = document.getElementById("clave2");
+    if (cla1.value!=cla2.value) {
+      alert('Las claves ingresadas son distintas');
+      cla1.value = '';
+      cla2.value = '';
+      evt.preventDefault();
+    }
+  }
+</script>
+  
+</body>
+</html>

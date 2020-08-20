@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Ejemplo de JavaScript</title>
+  <meta charset="UTF-8">
+</head>
+
+<body>
+  <script>
+    const personas = [
+      {
+        nombre: "pedro",
+        edad: 34
+      },
+      {
+        nombre: "ana",
+        edad: 54
+      },
+      {
+        nombre: "carlos",
+        edad: 12
+      },
+      {
+        nombre: "maría",
+        edad: 22
+      },
+      {
+        nombre: "oscar",
+        edad: 72
+      }
+    ];
+
+    let per = personas.find((persona, indice) => persona.nombre == "maría");
+    if (per != undefined)
+      console.log(per);
+    else
+      console.log("No se encuentra maría en el vector de objetos");
+    let indice = personas.findIndex((persona, indice) => persona.nombre == "maría");
+    if (indice != -1)
+      console.log("Se encuentra en la posción "+indice+" del arreglo.");
+    else
+      console.log("No se encuentra maría en el vector de objetos");
+
+  </script>
+</body>
+
+</html>

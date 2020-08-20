@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ejemplo de JavaScript</title>
+		<meta charset="UTF-8" />
+	</head>
+	<body>
+		<form>
+			<input
+				type="text"
+				id="nombre"
+				onFocus="vaciar(this)"
+				onBlur="verificarEntrada(this)"
+				value="nombre"
+			/><br />
+			<input
+				type="text"
+				id="edad"
+				onFocus="vaciar(this)"
+				onBlur="verificarEntrada(this)"
+				value="mail"
+			/>
+			<br />
+			<input type="button" value="Confirmar" />
+		</form>
+   </body>
+   <script>
+      function vaciar(control) {
+         control.value = "";
+      }
+      function verificarEntrada(control) {
+         if (control.value == "") alert("Debe ingresar datos");
+      }
+   </script>
+</html>

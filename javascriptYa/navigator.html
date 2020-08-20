@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body onload="coockies()">
+    <script>
+      function coockies() {
+        if (navigator.cookieEnabled) {
+          alert("el navegador tiene habilitadas las cookies");
+        } else {
+          alert("coockies deshabilitadas");
+        }
+      }
+    </script>
+    <script>
+      document.write("Valores de las propiedades del clase navigator:<br>");
+      document.write("appName :" + navigator.appName + "<br>");
+      document.write("appVersion :" + navigator.appVersion + "<br>");
+      document.write("cookieEnabled :" + navigator.cookieEnabled + "<br>");
+      document.write("plugins :" + navigator.plugins.length + "<br>");
+      document.write("Platform :" + navigator.platform);
+    </script>
+  </body>
+</html>

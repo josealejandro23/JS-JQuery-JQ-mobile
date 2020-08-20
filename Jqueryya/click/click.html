@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script
+			src="https://code.jquery.com/jquery-3.5.1.min.js"
+			integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+			crossorigin="anonymous"
+		></script>
+	</head>
+	<body>
+		<p>
+			Para el aprendizaje de la librería <strong>jQuery</strong> se requiere
+			tener conocimientos sólidos de <strong>JavaScript</strong>. También es
+			necesario entender el mecanismo de como se organiza en memoria una
+			página web.
+		</p>
+   </body>
+   <script>
+      let x = $(document);
+      x.ready(inicio);
+
+      function inicio(){
+         $('strong').click(ocultar)
+      }
+      function ocultar(){
+         $(this).hide();
+      }
+   </script>
+</html>

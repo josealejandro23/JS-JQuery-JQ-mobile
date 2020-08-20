@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        Ingrese su nombre y apellido <br>
+        <input type="text" name="" id="name"><br>
+        Ingrese su correo <br>
+        <input type="text" id="correo"> <br>
+        ingrese los comentarios del sitio <br>
+        <textarea name="" id="comentarios" cols="30" rows="5"></textarea> <br>
+        <input type="button" name="" id="" value="Enviar" onclick="enviar()">
+    </form>
+
+    <script>
+       function enviar(){
+           alert("Su nombre es: " + document.getElementById('name').value + " Su correo es: " + 
+           document.getElementById('correo').value + " Sus comentarios son: " + document.getElementById('comentarios').value);
+       }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<script>
+	function peticion(cbf) {
+		var url = "https://sserver.insoft.co/api/EsPrimo";
+		var msg = { numero: 9973 };
+		var pet = new XMLHttpRequest();
+		pet.open("POST", url, true);
+		pet.setRequestHeader("Authorization", "Basic InSoftPruebas");
+		pet.onreadystatechange = function () {
+			if (this.readyState == 4) {
+				var respuesta = this.responseText;
+				respuesta = JSON.parse(respuesta);
+				cbf(respuesta);
+			}
+		};
+		pet.send(JSON.stringify(msg));
+	}
+
+	peticion((res) => console.log(res.respuesta.primo));
+
+/* 	function timeOut(cb) {
+		setTimeout(() => {
+			cb(Math.round(Math.random() * 5));
+		}, 1000);
+	}
+
+	timeOut(function (a) {
+		console.log(a ** 2);
+	}); */
+</script>

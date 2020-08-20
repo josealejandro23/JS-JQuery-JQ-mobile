@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    <!-- <script>
+      const conjunto1 = new Set([
+          'C',
+          'Js',
+          'Python',
+          'PHP'
+      ])
+        console.log(conjunto1)
+    </script> -->
+
+    <script>
+      var conjunto = new Set();
+      for (i = 0; i < 10; i++) {
+        let random = Math.trunc(Math.random() * 10 + 1);
+        conjunto.add(random);
+      }
+      if(conjunto.has(10)) alert('Sí contiene el valor 10')
+      else{
+          alert('no contiene el valor 10')
+      }
+      alert(`la cantidad de números aleatorios es: ${conjunto.size}`)
+    </script>
+  </body>
+</html>

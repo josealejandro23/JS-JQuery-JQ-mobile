@@ -1,0 +1,52 @@
+<script>
+	function Persona(nombre, edad) {
+		this.nombre = nombre;
+		this.edad = edad;
+	}
+
+	function Empresa() {
+		this.tope = 60;
+		this.verificar = verificar;
+	}
+
+	function verificar(per) {
+		if (per > this.tope) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+
+	var personas = new Array();
+
+	personas[0] = persona1 = new Persona("Juan", 25);
+	personas[1] = persona2 = new Persona("Carlos", 32);
+	personas[2] = persona3 = new Persona("Ana", 53);
+
+	var empresa1 = new Empresa();
+
+	for (var i = 0; i < personas.length; i++)
+		empresa1.verificar(personas[i].edad)
+			? document.write(personas[i].nombre + " puede ingresar <br>")
+			: document.write(personas[i].nombre + " no puede ingresar <br>");
+
+	personas.forEach((persona) => {
+		empresa1.verificar(persona.edad)
+			? document.write(persona.nombre + " puede ingresar <br>")
+			: document.write(personas.nombre + " no puede ingresar <br>");
+	});
+
+	for (const persona of personas) {
+		empresa1.verificar(persona.edad)
+			? document.write(persona.nombre + " puede ingresar <br>")
+			: document.write(personas.nombre + " no puede ingresar <br>");
+	}
+
+	for (const i in personas) {
+		if (personas.hasOwnProperty(i)) {
+			empresa1.verificar(personas[i].edad)
+				? document.write(personas[i].nombre + " puede ingresar <br>")
+				: document.write(personas[i].nombre + " no puede ingresar <br>");
+		}
+	}
+</script>

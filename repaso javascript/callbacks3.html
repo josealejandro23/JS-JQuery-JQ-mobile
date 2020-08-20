@@ -1,0 +1,28 @@
+<script>
+	function sumar(cb) {
+		var res = 0;
+		for (let i = 1; i < arguments.length; i++) {
+			res += arguments[i];
+		}
+		setTimeout(() => {
+			cb(res);
+		}, 1000);
+	}
+
+	sumar(
+		function (res) {
+			console.log(
+				res < 10
+					? res < 5
+						? "valor demasiado pequeño, es menor a 5"
+						: "valor entre 5 y 10"
+					: "valor adecuado"
+			);
+		},
+		1,
+		2,
+		3,
+		4,
+		5
+	);
+</script>

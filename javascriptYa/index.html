@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Bienvenido, por favor seleccione las características del equipo que desea comprar</h3>
+    <br>
+    <form action="">
+        Seleccione el procesador o CPU:
+        <select name="" id="procesador">
+            <option value="1000">Intel Core i3</option>
+            <option value="3000">Intel Core i5</option>
+            <option value="5000">Intel Core i7</option>
+            <option value="0">No comprar</option>
+        </select>
+        <br><br>
+        Seleccione el monitor:
+        <select name="" id="monitor">
+            <option value="1000">Samsung 16"</option>
+            <option value="2000">LG 17"</option>
+            <option value="1000">Sony 15"</option>
+            <option value="3000">Samsung 18"</option>
+            <option value="0">No comprar</option>
+        </select>
+        <br><br>
+        Seleccione el DD:
+        <select name="" id="dd">
+            <option value="1000">500 GB</option>
+            <option value="2000">1 TB</option>
+            <option value="1500">800 GB</option>
+            <option value="800">400 GB</option>
+            <option value="0">No comprar</option>
+        </select>
+        <br><br>
+        <input type="button" name="" id="" value="Cotiza" onclick="cotizar()">
+        <br>
+        Costo total: <input type="text" name="" id="costo" >
+    </form>
+
+    <script>
+        function cotizar(){
+            cpu = document.getElementById('procesador');
+            monitor = document.getElementById('monitor');
+            dd = document.getElementById('dd');
+            var costo = 0;
+
+            costoCpu = parseInt(cpu.options[cpu.selectedIndex].value);
+            costoMonitor = parseInt(cpu.options[monitor.selectedIndex].value);
+            costoDd= parseInt(cpu.options[dd.selectedIndex].value);
+
+            costo = costoCpu + costoDd + costoMonitor;
+
+            document.getElementById('costo').value = costo;
+            }
+    </script>
+</body>
+</html>

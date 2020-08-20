@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<form action="">
+			<p>Ingrese sus datos</p>
+			<label for="nombre">Ingrese su nombre por favor</label>
+			<input type="text" id="nombre" name="nombre" />
+			<br />
+			<label for="edad">Ingrese su edad, debe ser mayor a 18</label>
+			<input type="text" id="edad" name="edad" />
+			<br />
+			<input type="button" value="Verificar" id="boton" />
+		</form>
+	</body>
+	<script>
+		document.getElementById("boton").addEventListener("click", () => {
+			var edad = document.getElementById("edad").value;
+			verificar(edad);
+		});
+
+		function verificar(a) {
+			a >= 18 ? alert("mayor de edad") : alert("menor de edad");
+		}
+	</script>
+</html>

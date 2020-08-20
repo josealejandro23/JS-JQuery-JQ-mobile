@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Bienvenido por favor escoja su vehículo de preferencia</h2>
+
+    <form action="">
+        ingrese los centímetros cúbicos del motor: <br>
+        <input type="text" id="cc" value="cc" onfocus="vaciarTexto(this)"> <br>
+        ingrese el año: <br>
+        <input type="text" id="año" value="año" onfocus="vaciarTexto(this)"> <br>
+        ingrese el modelo: <br>
+        <input type="text" value="modelo" id="modelo" onfocus="vaciarTexto(this)"><br>
+        ingrese la marca <br>
+        <input type="text" value="marca" id="marca" onfocus="vaciarTexto(this)"><br> <br>
+        <input type="button" onclick="verificar()" value="Verificar">
+    </form>
+
+</body> 
+
+<script>
+    function vaciarTexto(elemento){
+        elemento.value = "";
+    }
+
+    function carro(marca,modelo,año){
+        this.marca = marca;
+        this.modelo = modelo;
+        this.cv = cv;
+        this.año = año;
+        this.vmax = vmax;
+    }
+
+    function verificar(){
+        marca = document.getElementById('marca').value;
+        año = document.getElementById('año').value;
+        modelo = document.getElementById('modelo').value;
+        cc = document.getElementById('cc').value; 
+
+        auto1 = new carro(marca,modelo,año); 
+
+        auto1.cv(cc);
+        auto1.vmax();
+
+        document.write('la marca es: ' + auto1.marca + '<br>');
+        document.write('el modelo es: ' + auto1.modelo + '<br>');
+        document.write('el año es: ' + auto1.año + '<br>');
+        document.write('la velocidad máxima es: ' + auto1.vmax + ' Km/h <br>');
+        document.write('los caballos de vapor son: ' + auto1.cv + '<br>');
+    }
+
+    function cv(cc){
+        this.cv = cc / 10;
+    }
+
+    function vmax(){
+        this.vmax = parseFloat(this.cv * 1.2);
+    }
+</script>
+
+</html>

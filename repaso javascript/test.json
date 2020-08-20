@@ -1,0 +1,26 @@
+[
+   {
+      "nombre": "josé Alejandro",
+      "apellido": "Vargas",
+      "cedula": 1061788346,
+      "ciudad": "El tambo",
+      "nacimiento": "1996-02-23T17:00Z",
+      "hobbies":[
+         "nadar",
+         "leer",
+         "entrenar"
+      ]
+   },
+   {
+      "nombre": "Mayra Alejandra",
+      "apellido": "Figueroa",
+      "cedula": 1234567890,
+      "ciudad": "Cali",
+      "nacimiento": "1996-12-19T07:00Z",
+      "hobbies":[
+         "jugar",
+         "comer",
+         "ver películas"
+      ]
+   }
+]

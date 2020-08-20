@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+			integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+			crossorigin="anonymous"
+		/>
+		<script src="node_modules/jquery/dist/jquery.js"></script>
+		<style>
+			.pasar{
+				color:blue;
+				font-size: 1.5rem;
+				text-shadow: blueviolet;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-6">
+					<table class="table table-striped">
+						<thead class="thead-dark">
+							<tr>
+								<th>ID</th>
+								<th>Nombre</th>
+								<th>Post</th>
+							</tr>
+						</thead>
+						<tbody id="tabla"></tbody>
+					</table>
+				</div>
+				<div class="col-2">
+					<button id="consulta">Consulta los post realizados</button>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+<script>
+	var consulta = $("#consulta");
+	consulta.bind("click", imprimir);
+
+	function ajaxPeticion() {
+		var url = "https://jsonplaceholder.typicode.com/comments";
+		var xml = new XMLHttpRequest();
+		xml.open("GET", url, true);
+		xml.onreadystatechange = function () {
+			if (xml.readyState && xml.status == 200) {
+				var tabla = $("#tabla");
+				var cad = "";
+				var res = JSON.parse(xml.responseText);
+				for (let val of res) {
+					cad +=
+						"<tr> <td>" +
+						val.id +
+						"</td> <td>" +
+						val.name +
+						"</td> <td>" +
+						val.body +
+						"</td> </tr>";
+				}
+				tabla.html(cad);
+			}
+		};
+		xml.send();
+	}
+
+	function fetchPeticion() {
+		var tabla = $("#tabla");
+		var cad = "";
+		var url = "https://jsonplaceholder.typicode.com/comments";
+		fetch(url)
+			.then((res) => res.json())
+			.then((res) => {
+				for (let val of res) {
+					cad +=
+						"<tr> <td>" +
+						val.id +
+						"</td> <td>" +
+						val.name +
+						"</td> <td>" +
+						val.body +
+						"</td> </tr>";
+				}
+				tabla.html(cad);
+			})
+			.catch((e) => new Error("Error en la consulta"));
+	}
+
+	function promesa() {
+		var url = "https://jsonplaceholder.typicode.com/comments";
+		return new Promise((resolve, reject) => {
+			fetch(url)
+				.then((res) => res.json())
+				.then((datos) => resolve(datos))
+				.catch((e) => reject(new Error("error en la consulta")));
+		});
+	}
+
+	async function imprimir() {
+		try {
+			var tabla = $("#tabla");
+			var cad = "";
+			var dato = await promesa();
+			for (let val of dato) {
+				cad +=
+					"<tr> <td>" +
+					val.id +
+					"</td> <td>" +
+					val.name +
+					"</td> <td>" +
+					val.body +
+					"</td> </tr>";
+			}
+			tabla.html(cad);
+		} catch (error) {
+			console.error(error);
+		}
+
+		$("tr")
+			.find("td")
+			.hover(
+				function () {
+					$(this).css({ "background": "yellow", "font-style": "italic" });
+				},
+				function () {
+					$(this).css({ "background": "gray", "font-style": "normal" });
+				}
+			).end().find(":contains('lorem')").css("color","red").bind("click", function(){
+				$(this).toggleClass("pasar")
+			});
+	}
+</script>

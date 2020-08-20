@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <script>
+      class Persona {
+        constructor(nombre, edad) {
+          this.nombre = nombre;
+          this.edad = edad;
+        }
+        imprimir() {
+          document.write(`Nombre: ${this.nombre} de edad ${this.edad} <br>`);
+        }
+        verificar(){
+            this.edad > 18 ? document.write('Es mayor de edad') : document.write('No es mayor de edad')
+        }
+      }
+
+      persona1 = new Persona('josé',14);
+      persona1.imprimir();
+      persona1.verificar();
+    </script> -->
+
+    <script>
+      class Lista {
+        constructor() {
+          this.opciones = [];
+        }
+        agregar(elemento) {
+          this.opciones.push(elemento);
+        }
+        imprimir() {
+          document.write("La lista tiene los siguientes elementos <br>");
+          var lista = "<ol>"
+          for (var i in this.opciones) {
+            lista += '<li>' + this.opciones[i] + '</li>';
+          }
+          lista += "<ol>";
+          document.write(lista);
+        }
+      }
+      lista = new Lista();
+      lista.agregar("opción 1");
+      lista.agregar("opción 2");
+      lista.agregar("opción 3");
+      lista.agregar("opción 4");
+      lista.imprimir();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ejemplo de jQuery</title>
+		<meta charset="UTF-8" />
+		<style>
+			#menu {
+				font-family: Arial;
+				margin: 5px;
+			}
+
+			#menu p {
+				margin: 0px;
+				padding: 0px;
+			}
+
+			#menu a {
+				display: block;
+				padding: 3px;
+				width: 160px;
+				background-color: #f7f8e8;
+				border-bottom: 1px solid #eee;
+				text-align: center;
+			}
+
+			#menu a:link,
+			#menu a:visited {
+				color: #f00;
+				text-decoration: none;
+			}
+
+			#menu a:hover {
+				background-color: #369;
+				color: #fff;
+			}
+
+			#detalles {
+				background-color: #ffc;
+				text-align: left;
+				font-family: verdana;
+				border-width: 0;
+				padding: 5px;
+				border: 1px dotted #fa0;
+				margin: 5px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1>Signos del horóscopo.</h1>
+		<div id="menu">
+			<p><a id="enlace1" href="pagina1.php?cod=1">Aries</a></p>
+			<p><a id="enlace2" href="pagina1.php?cod=2">Tauro</a></p>
+			<p><a id="enlace3" href="pagina1.php?cod=3">Geminis</a></p>
+			<p><a id="enlace4" href="pagina1.php?cod=4">Cancer</a></p>
+			<p><a id="enlace5" href="pagina1.php?cod=5">Leo</a></p>
+			<p><a id="enlace6" href="pagina1.php?cod=6">Virgo</a></p>
+			<p><a id="enlace7" href="pagina1.php?cod=7">Libra</a></p>
+			<p><a id="enlace8" href="pagina1.php?cod=8">Escorpio</a></p>
+			<p><a id="enlace9" href="pagina1.php?cod=9">Sagitario</a></p>
+			<p><a id="enlace10" href="pagina1.php?cod=10">Capricornio</a></p>
+			<p><a id="enlace11" href="pagina1.php?cod=11">Acuario</a></p>
+			<p><a id="enlace12" href="pagina1.php?cod=12">Piscis</a></p>
+		</div>
+		<div id="detalles">Seleccione su signo.</div>
+
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	</body>
+</html>
+<script>
+	let x = $(document);
+	x.ready(inicializarEventos);
+
+	function inicializarEventos() {
+		let x = $("#menu a");
+		x.click(presionEnlace);
+	}
+
+	function presionEnlace() {
+		let pagina = $(this).attr("href");
+		let x = $(document);
+		x.ajaxStart(inicioEnvio);
+		x.ajaxStop(finEnvio)
+		x = $("#detalles");
+		x.load(pagina);
+		return false;
+	}
+
+	function inicioEnvio() {
+		let x = $("#detalles");
+		x.html('<img src="animales.gif">');
+		alert("le diste click al signo y eso lanzó el método ajax, este mensaje lo lanzó ajaxStart")
+	}
+
+	function finEnvio(){
+		alert("fin de la petición, este mensaje lo lanzó ajaxStop")
+	}
+</script>

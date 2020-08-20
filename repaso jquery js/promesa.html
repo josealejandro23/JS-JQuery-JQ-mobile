@@ -1,0 +1,28 @@
+<script>
+	function promesa() {
+		return new Promise((resolve, reject) => {
+			fetch("https://sserver.insoft.co/api/EsPrimo", {
+				method: "POST",
+				headers: { Authorization: "BasicInSoftPruebas" },
+				body: JSON.stringify({ numero: 9973 }),
+			})
+				.then((res) => res.json())
+				.then((res) => resolve(res))
+				.catch((e) => reject(e));
+		});
+	}
+
+   async function inicio(){
+      try {
+         var res = await promesa()
+         console.log(res.respuesta.primo)
+      } catch (e) {
+         console.log(e)
+      }
+      finally{
+         console.log("ejecutado inicio")
+      }
+   }
+
+   inicio()
+</script>

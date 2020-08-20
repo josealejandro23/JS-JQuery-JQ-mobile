@@ -1,0 +1,101 @@
+
+<!-- <script>
+    Ordena alfabéticamente una lista de strings
+
+    var nombres=['marcos','ana','luis','jorge','carlos'];
+    var f;
+    document.write('Vector antes de ordenarlo<br>');
+    for(f=0;f<nombres.length;f++)
+    {
+      document.write(nombres[f]+'<br>');
+    }
+    nombres.sort();
+    document.write('Vector después de ordenarlo<br>');
+    for(f=0;f<nombres.length;f++)
+    {
+      document.write(nombres[f]+'<br>');
+    }
+  </script> -->
+
+<!-- <script>
+    //ordena una lista de números de menor a mayor, requiere el uso de una función anónima para comparar los elementos
+
+    var vec=[100,5,60,3,90];
+    var f;
+    document.write('Vector antes de ordenarlo<br>');
+
+    for(f=0;f<vec.length;f++)
+    {
+      document.write(vec[f]+'<br>');
+    }
+
+    vec.sort(function(v1,v2) {
+      return v1-v2;
+    });
+
+    document.write('Vector después de ordenarlo<br>');
+    for(f=0;f<vec.length;f++)
+    {
+      document.write(vec[f]+'<br>');
+    }
+  </script> -->
+
+  <!-- <script>
+    ordenar números aleatorios y en reversa  
+
+      var vector = [];
+      var random;
+      for(let i = 0; i< 10; i++){
+          random = parseInt(Math.random()*100+1);
+          vector.push(random);
+      }
+      document.write('antes de ordenar <br>');
+      for(var i=0;i<vector.length;i++){
+        document.write(vector[i]+'<br>');
+      }
+      vector.sort(function(v1,v2){
+          return v1-v2;
+      });
+
+      document.write('despues de ordenar <br>');
+      for(var i=0;i<vector.length;i++){
+        document.write(vector[i]+'<br>');
+      }
+
+      document.write('vector en reversa <br>');
+      vector.reverse();
+      for(var i=0;i<vector.length;i++){
+        document.write(vector[i]+'<br>');
+      }
+  </script> -->
+
+  <script>
+    var sueldos=[];
+    var valor;
+    do {
+      valor=prompt('Ingrese el sueldo (cero para finalizar)','');
+      valor=parseInt(valor);
+      if (valor!=0)
+        sueldos.push(valor);
+    } while (valor!=0);
+    
+    sueldos.sort(function(x,y) {
+      if (x>y)
+        return 1;
+      else
+        return -1;
+    });
+   
+    document.write('Sueldos ordenados de menor a mayor<br>');
+    var f;
+    for(f=0;f<sueldos.length;f++)
+    {
+      document.write(sueldos[f]+'<br>');
+    }
+    sueldos.reverse();
+    document.write('Sueldos ordenados de mayor a menor<br>');
+    for(f=0;f<sueldos.length;f++)
+    {
+      document.write(sueldos[f]+'<br>');
+    }
+  </script>

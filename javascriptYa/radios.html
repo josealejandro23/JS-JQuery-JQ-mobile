@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h2>Bienvenido, selecciona tu rango de edad</h2>
+   <br>
+   <form action="">
+       <input type="radio" name="edad" id="menor"> Menor de 18 años
+       <input type="radio" name="edad" id="mayor"> Mayor de 18 años
+       <input type="button" name="" id="" onclick="verificar()" value="Comprobar">
+   </form>
+
+   <script>
+      function verificar(){
+          if(document.getElementById('menor').checked){
+              alert('Eres menor, no puedes ingresar al sitio');
+          }else if(document.getElementById('mayor').checked){
+              alert('Bienvenido señor adulto');
+          }
+      }
+   </script>
+</body>
+</html>

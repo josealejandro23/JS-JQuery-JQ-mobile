@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <script>
+      /* El método estático 'of' retorna la referencia de un objeto de tipo Array a partir de una lista de valores que le pasamos a dicho método: */
+      const arreglo1 = Array.of(10, 20, 30, 40);
+      console.log(arreglo1); // [10, 20, 30, 40]
+    </script> -->
+
+    <script>
+      /* El objeto Array implementan los métodos que permiten iterar sobre sus claves y valores:*/
+      const dias = [
+        "domingo",
+        "lunes",
+        "martes",
+        "miércoles",
+        "jueves",
+        "viernes",
+        "sábado",
+      ];
+      for (let indice of dias.keys()) console.log(indice); // 0 1 2 3 4 5 6
+      for (let valor of dias.values()) console.log(valor); // "domingo" "lunes" "martes" "miércoles"
+      // "jueves" "viernes" "sábado"
+      for (let componente of dias.entries()) console.log(componente); // [0, "domingo"] [1, "lunes"] [2, "martes"]
+      // [3, "miércoles"] [4, "jueves"]
+      // [5, "viernes"] [6, "sábado"] [7, "domingo"]
+    </script>
+  </body>
+</html>

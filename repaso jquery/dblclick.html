@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+		<style>
+			#recuadro {
+				color: #aa0;
+				background-color: #ff0;
+				text-align: center;
+				left: 40px;
+				top: 30px;
+				width: 800px;
+				height: 70px;
+			}
+		</style>
+	</head>
+	<body>
+		<button id="mostrar">Mostrar</button>
+		<p>doble click sobre el párrafo para ocultarlo</p>
+		<div id="recuadro">
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos,
+			et cum! Nisi, labore! Saepe id aliquid odio ad libero modi?
+		</div>
+	</body>
+</html>
+<script>
+	$(document).ready(() => {
+		$("#recuadro").dblclick(ocultar);
+		$("#mostrar").click((_) => {
+			$("#recuadro").show("normal");
+		});
+	});
+
+	function ocultar() {
+		$(this).hide(1000);
+	}
+</script>

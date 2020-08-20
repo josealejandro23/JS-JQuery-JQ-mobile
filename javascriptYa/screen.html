@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="mostrar()">Mostrar</button>
+
+    <script>
+      function mostrar() {
+        var ventana = open(
+          "",
+          "",
+          "width=" + screen.availWidth + ",height=" + screen.availHeight / 2
+        );
+        ventana.document.write(
+          "Valores de las propiedades del clase screen:<br>"
+        );
+        ventana.document.write("availHeight :" + screen.availHeight + "<br>");
+        ventana.document.write("availWidth :" + screen.availWidth + "<br>");
+        ventana.document.write("height :" + screen.height + "<br>");
+        ventana.document.write("width :" + screen.width + "<br>");
+        ventana.document.write("colorDepth :" + screen.colorDepth);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+      <script
+			src="https://code.jquery.com/jquery-3.5.1.min.js"
+			integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+			crossorigin="anonymous"
+      ></script>
+      <style>
+         .fondoIn{
+            background-color: aquamarine;
+            color: navy;
+         }
+         .fondoOut{
+            color: rebeccapurple;
+         }
+      </style>
+	</head>
+	<body>
+		<table border="1">
+			<tr>
+				<th>Nombre</th>
+				<th>Apellido</th>
+			</tr>
+			<tr>
+				<td>Alejandro</td>
+				<td>Vargas</td>
+			</tr>
+			<tr>
+				<td>José</td>
+				<td>Gutiérrez</td>
+			</tr>
+		</table>
+   </body>
+   <script>
+      let x = $(document);
+      x.ready(inicio)
+
+      function inicio(){
+         let x = $('td')
+         x.hover(fondoIn,fondoOut)
+      }
+      function fondoIn(){
+         $(this).removeClass()
+         $(this).addClass('fondoIn')
+      }
+      function fondoOut(){
+         $(this).removeClass()
+         $(this).addClass('fondoOut')
+      }
+   </script>
+</html>

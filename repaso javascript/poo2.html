@@ -1,0 +1,26 @@
+<script>
+	function Suma(valor1,valor2) {
+		this.valor1 = valor1;
+		this.valor2 = valor2;
+		this.cargar1 = cargar1;
+		this.cargar2 = cargar2;
+		this.resultado = resultado;
+	}
+
+	function cargar1() {
+		valor1 = parseInt(prompt("ingrese el valor 1"));
+	}
+
+	function cargar2() {
+		valor2 = parseInt(prompt("ingrese el valor 2"));
+	}
+
+	function resultado(a, b) {
+		return a + b;
+	}
+
+	var suma1 = new Suma();
+	suma1.cargar1();
+	suma1.cargar2();
+	alert(resultado(valor1, valor2));
+</script>

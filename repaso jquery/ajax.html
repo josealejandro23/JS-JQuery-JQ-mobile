@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ejemplo de jQuery</title>
+		<meta charset="UTF-8" />
+	</head>
+
+	<body>
+		<form action="pagina1.php" method="post" id="formulario">
+			Ingrese nro:<input type="text" name="nro" id="nro" size="10" /><br />
+			<input type="submit" value="Calcular el cuadrado" id="enviar" />
+			<div id="resultados"></div>
+		</form>
+
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	</body>
+</html>
+<script>
+	let x = $(document);
+	x.ready(inicializarEventos);
+
+	function inicializarEventos() {
+		let x = $("#enviar");
+		x.click(presionSubmit);
+	}
+
+	function presionSubmit() {
+		let v = $("#nro").val();
+		$.ajax({
+			async: true,
+			type: "POST",
+			dataType: "html",
+			contentType: "application/x-www-form-urlencoded",
+			url: "pagina2.php",
+			data: "numero=" + v,
+			beforeSend: inicioEnvio,
+			success: llegadaDatos,
+			timeout: 4000,
+			error: problemas,
+		});
+		return false;
+	}
+
+	function inicioEnvio() {
+		let x = $("#resultados");
+		x.html('<animales.gif">');
+	}
+
+	function llegadaDatos(datos) {
+		$("#resultados").text(datos);
+	}
+
+	function problemas() {
+		$("#resultados").text("Problemas en el servidor.");
+	}
+</script>

@@ -1,0 +1,24 @@
+<script>
+	function promesa() {
+		return new Promise((resolve, reject) => {
+			var url = "https://randomuser.me/api/";
+
+			var pet = new XMLHttpRequest();
+			pet.open("GET", url);
+			pet.onreadystatechange = function () {
+				if (this.readyState == 4 && this.status == 200) {
+					var res = this.responseText;
+					res = JSON.parse(res);
+					resolve(res);
+				} else if (this.readyState == 4 && this.status != 200) {
+					reject(new Error("se ha encontrado un problema en la petición " + this.status));
+				}
+			};
+			pet.send();
+		});
+	}
+
+	promesa()
+		.then((res) => console.log(res))
+		.catch((e) => console.log(e));
+</script>

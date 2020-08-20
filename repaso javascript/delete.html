@@ -1,0 +1,17 @@
+<script>
+   var vector = new Array();
+
+   for(var i = 0;i <10; i++){
+      vector[i] = Math.round(Math.random()*10)
+   }
+
+   document.write(vector);
+
+   for (var i = 0;i<10;i++) {
+      if(vector[i]%2 == 0){
+         delete vector[i];
+      }
+   }
+
+   document.write("<br>" + vector)
+</script>

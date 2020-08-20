@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ejemplo de JavaScript</title>
+		<meta charset="UTF-8" />
+	</head>
+	<body>
+		<span onmouseover="pintar('#f00')" onmouseout="pintar('#000')" style="color: red;">Rojo</span>
+      <span onmouseover="pintar('#0f0')" onmouseout="pintar('#000')" style="color: #0f0;">Verde</span>
+      <span onmouseover="pintar('#00f')" onmouseout="pintar('#000')" style="color: blue;">Azul</span>
+		<div
+			id="cuadrado1"
+			style="background: #000; width: 200px; height: 200px;"
+		></div>
+	</body>
+	<script>
+		function pintar(col) {
+			document.getElementById("cuadrado1").style.backgroundColor = col;
+		}
+	</script>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Fecha {
+        static retornarMes(mes) {
+          switch (mes) {
+            case 1: return 'enero';
+            case 2: return 'febrero';
+            case 3: return 'marzo';
+            case 4: return 'abril';
+            case 5: return 'mayo';
+            case 6: return 'junio';
+            case 7: return 'julio';
+            case 8: return 'agosto';
+            case 9: return 'septiembre';
+            case 10: return 'octubre';
+            case 11: return 'noviembre';
+            case 12: return 'diciembre';
+          }
+        }
+        static fechaCompleta(){
+            var fecha = new Date()
+            return `${fecha.getDate()} - ${fecha.getMonth() + 1} - ${fecha.getFullYear()} <br>`
+        }
+      }
+
+      document.write(`la fecha actual es: ${Fecha.fechaCompleta()}`)
+      document.write(`mes ${Fecha.retornarMes(5)}`)
+    </script>
+  </body>
+</html>

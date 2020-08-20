@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h2>Seleccione que deportes practica</h2>
+   <br>
+   <form action="">
+     <input type="checkbox" name="" id="deporte1" value="fútbol"> Fútbol <br>
+     <input type="checkbox" name="" id="deporte2" value="tenis"> tenis <br>
+     <input type="checkbox" name="" id="deporte3" value="ping pong"> ping pong <br>
+
+     <input type="button" name="" id="" onclick="verificar()" value="verificar">
+     <input type="text" name="" id="resultado">
+   </form>
+
+   <script>
+     function verificar(){
+      deportes = [];
+      var i=1;
+      for(i; i<4;i++){
+        if(document.getElementById('deporte'+i).checked){
+          deportes[i-1] = " " + document.getElementById('deporte'+i).value;
+        }
+      }
+      document.getElementById('resultado').value = deportes;
+     }
+   </script>
+</body>
+</html>

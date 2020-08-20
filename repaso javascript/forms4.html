@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<p>Compre su computador a medida, escoja los componentes</p>
+		<form action="">
+			<p>Escoja la cpu</p>
+			<select name="cpu" id="cpu" onchange="calcularCpu()">
+				<option value="400">Intel i3</option>
+				<option value="600">Intel i5</option>
+				<option value="800">Intel i7</option>
+			</select>
+			<input type="text" name="" id="desCpu" />
+			<input type="text" name="" id="precioCpu" />
+			<p>Escoja el monitor</p>
+			<select name="monitor" id="monitor" onchange="calcularMonitor()">
+				<option value="300">15''</option>
+				<option value="500">18''</option>
+				<option value="700">21''</option>
+			</select>
+			<input type="text" name="" id="desMonitor" />
+			<input type="text" name="" id="precioMonitor" />
+			<p>Escoja el disco duro</p>
+			<select name="dd" id="dd" onchange="calcularDd()">
+				<option value="600">400GB</option>
+				<option value="700">600GB</option>
+				<option value="800">600GB</option>
+			</select>
+			<input type="text" name="" id="desDd" />
+			<input type="text" name="" id="precioDd" />
+			<br /><br />
+			<input type="button" value="Calcular precio" onclick="valorTotal()" />
+			<p>El total es: <input type="text" name="" id="total" /></p>
+		</form>
+	</body>
+	<script>
+		var precio = 0;
+
+		function calcularCpu() {
+			document.getElementById("desCpu").value = document.getElementById(
+				"cpu"
+			).options[document.getElementById("cpu").selectedIndex].text;
+			document.getElementById("precioCpu").value = document.getElementById(
+				"cpu"
+			).options[document.getElementById("cpu").selectedIndex].value;
+      }
+      
+      function calcularMonitor(){
+         document.getElementById("desMonitor").value = document.getElementById(
+				"monitor"
+			).options[document.getElementById("monitor").selectedIndex].text;
+			document.getElementById(
+				"precioMonitor"
+			).value = document.getElementById("monitor").options[
+				document.getElementById("monitor").selectedIndex
+			].value;
+      }
+
+      function calcularDd(){
+         document.getElementById("desDd").value = document.getElementById(
+				"dd"
+			).options[document.getElementById("dd").selectedIndex].text;
+			document.getElementById("precioDd").value = document.getElementById(
+				"dd"
+			).options[document.getElementById("dd").selectedIndex].value;
+      }
+      
+      function valorTotal() {
+			var cpu = parseInt(document.getElementById("cpu").options[
+				document.getElementById("cpu").selectedIndex
+			].value);
+
+			var monitor = parseInt(document.getElementById("monitor").options[
+				document.getElementById("monitor").selectedIndex
+         ].value);
+
+         var dd = parseInt(document.getElementById("dd").options[
+				document.getElementById("dd").selectedIndex
+         ].value);
+         
+         precio = cpu + monitor + dd;
+
+         document.getElementById("total").value = precio; 
+		}
+	</script>
+</html>

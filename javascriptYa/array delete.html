@@ -1,0 +1,23 @@
+<script>
+    var vector = [];
+    var valor;
+    for(var i = 0; i < 10; i++){
+        valor = parseInt(Math.random()*10 + 1);
+        vector.push(valor);
+    }
+    for(i=0;i<vector.length;i++){
+        document.write(vector[i] + '<br>');
+    }
+
+    for(i=0;i<vector.length;i=i+2){
+        if(i%2 == 0){
+            delete vector[i];
+        }
+    }
+
+    document.write('borrado de componentes pares <br>');
+
+    for(i=0;i<vector.length;i++){
+        document.write(vector[i] + '<br>');
+    }
+</script>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Fetch</title>
+	</head>
+	<body>
+		<button id="btn">Hacer una conexión con Ajax</button>
+	</body>
+</html>
+
+<script>
+	document.addEventListener("DOMContentLoaded", configureAjaxCalls);
+
+	function configureAjaxCalls() {
+		document.getElementById("btn").addEventListener("click", (_) => {
+			fetch("test2.json")
+				.then((data) => ajaxPositive(data))
+				.catch((error) => showError(error));
+		});
+
+		function ajaxPositive(response) {
+			console.log("response.ok: ", response.ok);
+			if (response.ok) {
+				response.json().then(showResult);
+			} else {
+				showError("status code: " + response.status);
+			}
+		}
+
+		function showResult(json) {
+			for (const persona of json.personas) {
+				console.log(persona.nombre + " " + persona.apellido);
+				console.log(persona.nacimiento);
+				console.log(persona.cedula);
+				for (const i in persona.hobbies) {
+					console.log(persona.hobbies[i]);
+				}
+			}
+		}
+
+		function showError(err) {
+			console.log("muestra error", err);
+		}
+	}
+</script>

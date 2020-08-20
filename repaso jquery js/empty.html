@@ -1,0 +1,30 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+		<style>
+			.highlight {
+				background: yellow;
+			}
+			.rojo {
+				background: tomato;
+			}
+		</style>
+	</head>
+	<body>
+      <div>Texto fuera del principal</div>
+		<div id="principal">
+			<div>esto está en un div</div>
+			<p>primero.</p>
+			<p>segundo.</p>
+			<button id="boton">botón para pruebas, atar el bind</button>
+			<button id="boton2">botón para pruebas, desatar el bind</button>
+		</div>
+	</body>
+</html>
+<script>
+	var div = $("#principal")
+   div.empty()
+</script>

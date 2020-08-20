@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script
+			src="https://code.jquery.com/jquery-3.5.1.min.js"
+			integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+			crossorigin="anonymous"
+		></script>
+	</head>
+	<body>
+		<form action="">
+			<input
+				id="cuadro1"
+				type="text"
+				value="Busqueda uno"
+				style="color: blue;"
+			/>
+			<input
+				id="cuadro2"
+				type="text"
+				value="Busqueda dos"
+				style="color: blue;"
+			/>
+		</form>
+	</body>
+	<script>
+		let x = $(document);
+		x.ready(inicio);
+
+		function inicio() {
+			let cuadro1 = $("#cuadro1");
+			let cuadro2 = $("#cuadro2");
+
+			cuadro1.focus(foco);
+			cuadro2.focus(foco);
+
+			cuadro1.blur(perderFoco);
+			cuadro2.blur(perderFoco);
+
+			function foco() {
+				$(this).css("color", "red");
+			}
+
+			function perderFoco() {
+				$(this).css("color", "blue");
+			}
+		}
+	</script>
+</html>

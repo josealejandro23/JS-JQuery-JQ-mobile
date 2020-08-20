@@ -1,0 +1,22 @@
+{
+	"Carrera": {
+		"nombre": "desarrollo web",
+		"cantidad_semestres": 10,
+		"semestres": [
+			{ "primero": { "circuitos": true, "calculo": true, "campos": false } },
+			{ "segundo": { "calculo2": true, "fisica": false, "ética": false } },
+			{
+				"tercero": {
+					"mecanica": false,
+					"analógicos": true,
+					"digitales": true
+				}
+			}
+		],
+		"aprobados": {
+			"primero": true,
+			"segundo": false,
+			"tercero": true
+		}
+	}
+}

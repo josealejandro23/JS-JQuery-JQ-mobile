@@ -1,0 +1,114 @@
+<!-- <script>
+	var materias = new Array(2);
+	function llenar() {
+		var i = 0;
+		do {
+			materias[i] = prompt("Ingresa el nombre de la materia " + i);
+			i++;
+		} while (i < materias.length);
+	}
+
+	function mostrarLista() {
+		for (const materia of materias) {
+			document.write(materia + "<br>");
+		}
+	}
+
+	llenar();
+	mostrarLista();
+</script> -->
+
+<!-- <script>
+	var sueldos = new Array(3);
+
+	function llenarSueldos() {
+		var i = 0;
+		do {
+			sueldos[i] = parseInt(
+				prompt("ingrese el sueldo del funcionario " + i)
+			);
+			i++;
+		} while (i < 3);
+	}
+
+	function mostrarSueldos(sueldos) {
+		var i = 1;
+		for (const sueldo of sueldos) {
+			document.write("el sueldo del funcionario " + i + " es " + sueldo + "<br>");
+			i++;
+		}
+	}
+
+	function calcularGastos() {
+		var suma = 0;
+		for (const sueldo of sueldos) {
+			suma = suma + sueldo;
+		}
+		document.write("El gasto en sueldos es de: " + suma + " pesos")
+	}
+	llenarSueldos();
+	mostrarSueldos(sueldos);
+	calcularGastos(sueldos);
+</script>-->
+
+<!-- <script>
+	var valores = new Array(5);
+	function llenarVector() {
+		var i = 0;
+		for (i; i < valores.length; i++) {
+			valores[i] = parseInt(prompt("Ingrese el valor " + (i + 1)));
+		}
+	}
+	function mayores(valores) {
+		var suma = 0;
+		var contador = 0;
+		for (const valor of valores) {
+			if (valor > 36) {
+				suma = suma + valor;
+			}
+			if (valor >= 50) {
+				contador++;
+			}
+		}
+		document.write(
+			"La suma de los valores mayores a 36 es: " + suma + "<br>"
+		);
+		document.write(
+			"La cantidad de valores mayores a 50 es: " + contador + "<br>"
+		);
+	}
+	function total(valores) {
+		var total = 0;
+		for (const valor of valores) {
+			total = total + valor;
+		}
+		return total;
+	}
+
+	llenarVector();
+	mayores(valores);
+	document.write(total(valores));
+</script> -->
+
+<script>
+	var vector1 = new Array(3);
+	var vector2 = new Array(3);
+	var res = new Array(3);
+
+	function llenarVector(vector) {
+		for (var i = 0; i < vector.length; i++) {
+			vector[i] = parseInt(prompt("Ingrese el valor " + (i + 1)));
+		}
+	}
+
+	function sumarVectores(a, b) {
+		for (var i = 0; i < 3; i++) {
+			res[i] = a[i] + b[i];
+		}
+		return res;
+	}
+
+	llenarVector(vector1);
+	llenarVector(vector2);
+	document.write(sumarVectores(vector1, vector2));
+</script>

@@ -1,0 +1,85 @@
+{
+	"Sudamerica": {
+		"noPaises": 12,
+		"idiomas": ["Español", "Portugués"],
+		"habitantes": 500e6,
+		"hemisferio": "sur",
+		"primer-mundo": false,
+		"paises": {
+			"colombia": {
+				"idioma": "Español",
+				"noDpts": 32,
+				"clima": "tropical",
+				"multietnico": true,
+				"ciudadesPrincipales": [
+               {
+						"bogota": {
+							"habitantes": 8e6,
+							"nombre": "Santa fe de Bogotá",
+							"departamento": "Cundinamarca",
+							"frio": true
+						}
+					},
+					{
+						"cali": {
+							"habitantes": 2.5e6,
+							"nombre": "Santiago de Cali",
+							"departamento": "Valle del Cauca",
+							"frio": false
+						}
+					},
+					{
+						"barranquilla": {
+							"habitantes": 2e6,
+							"nombre": "Barranquilla",
+							"departamento": "Atlántico",
+							"frio": false
+						}
+					}
+				]
+			},
+			"Ecuador": {
+				"idioma": "Español",
+				"noDptos": 12,
+				"clima": "frio",
+				"multietnico": false,
+				"ciudadesPrincipales": ["Quito", "Guayaquil"]
+			}
+		}
+   },
+   "DatosJson":["string", "number", "boolean","date", "object", "array", "null"]
+} 
+{
+	"Alejandro": {
+		"nombres": "José Alejandro",
+		"apellidos": "Vargas Gutiérrez",
+		"nacimiento": "1996-02-23T12:00.000Z",
+		"ciudad-natal": "El Tambo",
+		"casado": false,
+		"vicios": null,
+		"deportes": ["fútbol", "calistenia", "senderismo"],
+		"edad": 24.7,
+		"poseciones": {
+			"electronicos": [
+				{
+					"de-mesa": ["computador", "portatil"]
+				},
+				{
+					"de-mano": ["smartphone"]
+				}
+			],
+			"otros": ["cama", "telescopio"]
+		},
+		"estudios": {
+			"universitarios": {
+				"carrera": "Ing. Electrónica",
+				"terminada": "true"
+			},
+			"escolares": {
+				"escuela": "cuatro esquinas",
+				"colegio": "piagua",
+				"preparatoria": "fdps"
+			}
+		}
+	}
+}

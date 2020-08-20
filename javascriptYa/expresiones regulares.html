@@ -1,0 +1,118 @@
+<!-- <script>
+    var oracion=prompt('Ingrese una oración','');
+    var patron=/hora/;
+    if (patron.test(oracion))
+      alert('La oración ingresada contiene la palabra \'hora\'');
+    else
+      alert('La oración ingresada no contiene la palabra \'hora\'');
+  </script> -->
+
+<!-- <script>
+    var valor=prompt('Ingrese un numero entero positivo de 3 dígitos','');
+    var patron=/^[0-9]{3}$/;
+    if (patron.test(valor))
+      alert('Se ingresó un valor entero positivo de 3 dígitos');
+    else
+      alert('No se ingresó un valor entero positivo de 3 dígitos');
+  </script>
+ -->
+  <!-- Los dos primeros caracteres con un significado especial en una expresión regular son: ^ principio de cadena y $ fin de cadena.
+Cuando queremos controlar si un string comienza con un determinado carácter o conjunto de caracteres podemos implementar una expresión regular antecediendo al o los caracteres el símbolo ^. -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Ejemplo de JavaScript</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+
+<script>
+  var oracion=prompt('Ingrese una oración','');
+  var patron1=/^-/;
+  if (patron1.test(oracion))
+    alert('Comienza la oración con el carácter -');
+  else
+    alert('No comienza la oración con el carácter -');
+  var patron2=/^hora/;
+  if (patron2.test(oracion))
+    alert('Comienza la oración con la palabra hora');
+  else
+    alert('No comienza la oración con la palabra hora');
+</script>
+  
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Ejemplo de JavaScript</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+
+<script>
+  var oracion=prompt('Ingrese una palabra','');
+  var patron=/ón$/;
+  if (patron.test(oracion))
+    alert('La palabra finaliza con los caracteres \'ón\'');
+  else
+    alert('La palabra no finaliza con los caracteres \'ón\'');
+</script>
+  
+</body>
+</html> -->
+
+<!-- Ahora veremos el significado de los caracteres [] en una expresión regular. Se emplea estos caracteres para encerrar los caracteres permitidos. -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ejemplo de JavaScript</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+
+<!-- <script>
+  var palabra=prompt('Ingrese una palabra','');
+  var patron=/^[a-zA-Z]/;
+  if (patron.test(palabra))
+    alert('La palabra comienza con un carácter alfabético (mayúscula o minúscula)');
+  else
+    alert('La palabra no comienza con un carácter alfabético (mayúscula o minúscula)');
+</script> -->
+
+<!-- <script>
+    var palabra=prompt('Ingrese una palabra','');
+    var patron=/[aeiouAEIOUáéíóú]$/;
+    if (patron.test(palabra))
+      alert('La palabra finaliza con vocal');
+    else
+      alert('La palabra no finaliza con vocal');
+  </script> -->
+
+<!-- Hemos utilizado el carácter '^' para encontrar coincidencias desde el principio del string, pero
+     este carácter dentro de los corchetes abiertos y cerrados tiene otro uso. Permite obtener todos 
+     los otros caracteres distintos a los especificados.-->
+     
+<!--      <script>
+        var palabra=prompt('Ingrese una palabra','');
+        var patron=/[^aeiouAEIOUáéíóú]$/;
+        if (patron.test(palabra))
+          alert('La palabra no finaliza con vocal');
+        else
+          alert('La palabra finaliza con vocal');
+      </script>
+ -->
+<!-- Ingresar una palabra y luego mostrar un mensaje si contiene una vocal en alguna parte de la palabra.-->
+
+<script>
+    var palabra=prompt('Ingrese una palabra','');
+    var patron=/[aeiouAEIOUáéíóú]/;
+    if (patron.test(palabra))
+      alert('La palabra tiene al menos una vocal');
+    else
+      alert('La palabra no tiene vocales');
+  </script>
+</body>
+</html>

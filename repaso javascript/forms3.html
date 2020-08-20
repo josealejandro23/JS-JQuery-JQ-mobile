@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <p>Escoja su pizza</p>
+   <form action="">
+      <select name="pizzas" id="pizzas">
+         <option value="10">Jamon</option>
+         <option value="20">Hawaiana</option>
+         <option value="30">Cábanos</option>
+      </select>
+
+      <input type="text" id="total">
+   </form>
+</body>
+<script>
+   var pizzas = document.getElementById("pizzas")
+   pizzas.addEventListener("change",verPrecio)
+
+   function verPrecio(){
+      document.getElementById("total").value = pizzas.options[pizzas.selectedIndex].value;
+   }
+</script>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ejemplo de jQuery</title>
+		<meta charset="UTF-8" />
+	</head>
+
+	<body>
+		<p>Párrafo fuera de la tabla</p>
+		<table border="1">
+			<tr>
+				<td>
+					<p>Párrafo dentro de la primer tabla.</p>
+				</td>
+				<td>
+					<p>Párrafo dentro de la primer tabla.</p>
+				</td>
+			</tr>
+		</table>
+		<br />
+		<table border="1" id="tabla2">
+			<tr>
+				<td>
+					<p>Párrafo dentro de la segunda tabla.</p>
+				</td>
+				<td>
+					<p>Párrafo dentro de la segunda tabla.</p>
+				</td>
+			</tr>
+		</table>
+
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	</body>
+</html>
+<script>
+	let x = $(document);
+	x.ready(inicializarEventos);
+
+	function inicializarEventos() {
+		let x = $("p");
+		x.click(presionParrafoDocumento);
+		x = $("#tabla2 p");
+		x.click(presionpresionParrafoSegundaTabla);
+	}
+
+	function presionParrafoDocumento() {
+		alert("se presionó un párrafo del documento");
+	}
+
+	function presionpresionParrafoSegundaTabla() {
+		alert("se presionó un párrafo contenido en la segunda tabla.");
+	}
+</script>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div id="contenido"></div>
+	</body>
+	<script>
+		const url = "https://freegeoip.app/json/";
+		window.addEventListener("DOMContentLoaded", () => {
+			fetch(url)
+				.then((response) => response.json())
+				.then((datos) => {
+					document.getElementById(
+						"contenido"
+					).innerHTML = `<p>Pais: ${datos.country_name}</p>
+               <p>Ciudad: ${datos.city}</p>
+               <p>Código: ${datos.zip_code}</p>
+               <p>IP: ${datos.ip}</p>`;
+				});
+		});
+	</script>
+</html>

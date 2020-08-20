@@ -1,0 +1,12 @@
+<script>
+    function mayor(){
+        var aux = arguments[0];
+        for(var i=0 in arguments){
+            if(arguments[i] > aux){
+                aux = arguments[i];
+            }
+        }
+        return aux;
+    }
+    document.write(mayor(7,2,63,4,5,6,5,3,5,45,34,34,2,45,34,6,67,8,676,90,6,76,89,5645,43,34,34,56,6,56,56));
+</script>

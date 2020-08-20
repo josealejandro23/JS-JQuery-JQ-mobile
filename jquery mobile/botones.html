@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link
+			rel="stylesheet"
+			href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"
+		/>
+		<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.js"></script>
+		<style>
+			table {
+				width: 100%;
+				border-spacing: 0;
+			}
+			th {
+				text-align: left;
+			}
+			th h3 {
+				margin: 0.6em 0 0.6em 0.5em;
+			}
+			th,
+			td {
+				vertical-align: top;
+				border-top: 1px solid #eee;
+				padding: 1px 3px;
+				background-color: #fcfcfc;
+			}
+			td .ui-btn {
+				margin: 0.4em 0 0.5em 0;
+			}
+			td .ui-btn-inner {
+				padding: 0.4em 15px;
+			}
+		</style>
+	</head>
+	<body>
+		<a
+			href="#"
+			class="ui-btn ui-corner-all ui-shadow"
+			style="background: orange;"
+			>boton jquery mobile</a
+		>
+
+		<a class="ui-btn ui-shadow ui-corner-all ui-btn-icon-top ui-icon-phone"
+			>Llámanos</a
+		>
+		<a
+			class="ui-btn ui-shadow ui-corner-all ui-btn-icon-right ui-icon-arrow-l"
+			>arrow-l</a
+		>
+		<a
+			class="ui-btn ui-shadow ui-corner-all ui-btn-icon-bottom ui-icon-arrow-r"
+			>arrow-r</a
+		>
+		<a class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-arrow-u"
+			>arrow-u</a
+		>
+
+		<a href="#" class="ui-btn">Anchor - Inherit</a>
+		<a href="#" class="ui-btn ui-btn-a">Anchor - Theme swatch A</a>
+		<a href="#" class="ui-btn ui-btn-b">Anchor - Theme swatch B</a>
+		<a class="ui-btn">Button - Inherit</a>
+		<a class="ui-btn ui-btn-a">Button - Theme swatch A</a>
+		<a class="ui-btn ui-btn-b">Button - Theme swatch B</a>
+
+		<table margin="0">
+			<tbody>
+				<tr>
+					<th><h3>fade</h3></th>
+					<td>
+						<a
+							href="page-transitions-dialog.html"
+							data-rel="dialog"
+							data-transition="fade"
+							class="ui-btn ui-corner-all ui-shadow ui-btn-inline"
+							>dialog</a
+						>
+					</td>
+					<td>
+						<a
+							href="page-transitions-page.html"
+							data-transition="fade"
+							class="ui-btn ui-corner-all ui-shadow ui-btn-inline"
+							>page</a
+						>
+					</td>
+				</tr>
+				<tr>
+					<th><h3>pop</h3></th>
+					<td>
+						<a
+							href="page-transitions-dialog.html"
+							data-rel="dialog"
+							data-transition="pop"
+							class="ui-btn ui-corner-all ui-shadow ui-btn-inline"
+							>dialog</a
+						>
+					</td>
+					<td>
+						<a
+							href="page-transitions-page.html"
+							data-transition="pop"
+							class="ui-btn ui-corner-all ui-shadow ui-btn-inline"
+							>page</a
+						>
+					</td>
+				</tr>
+				<tr>
+					<th><h3>flip</h3></th>
+					<td>
+						<a
+							href="page-transitions-dialog.html"
+							data-rel="dialog"
+							data-transition="flip"
+							class="ui-btn ui-corner-all ui-shadow ui-btn-inline"
+							>dialog</a
+						>
+					</td>
+					<td>
+						<a
+							href="page-transitions-page.html"
+							data-transition="flip"
+							class="ui-btn ui-corner-all ui-shadow ui-btn-inline"
+							>page</a
+						>
+					</td>
+				</tr>
+				<tr>
+					<th><h3>turn</h3></th>
+					<td>
+						<a
+							href="page-transitions-dialog.html"
+							data-rel="dialog"
+							data-transition="turn"
+							class="ui-btn ui-corner-all ui-shadow ui-btn-inline"
+							>dialog</a
+						>
+					</td>
+					<td>
+						<a
+							href="page-transitions-page.html"
+							data-transition="turn"
+							class="ui-btn ui-corner-all ui-shadow ui-btn-inline"
+							>page</a
+						>
+					</td>
+				</tr>
+				<tr>
+					<th><h3>flow</h3></th>
+					<td>
+						<a
+							href="page-transitions-dialog.html"
+							data-rel="dialog"
+							data-transition="flow"
+							class="ui-btn ui-corner-all ui-shadow ui-btn-inline"
+							>dialog</a
+						>
+					</td>
+					<td>
+						<a
+							href="page-transitions-page.html"
+							data-transition="flow"
+							class="ui-btn ui-corner-all ui-shadow ui-btn-inline"
+							>page</a
+						>
+					</td>
+				</tr>
+				<tr>
+					<th><h3>slidefade</h3></th>
+					<td>
+						<a
+							href="page-transitions-dialog.html"
+							data-rel="dialog"
+							data-transition="slidefade"
+							class="ui-btn ui-corner-all ui-shadow ui-btn-inline"
+							>dialog</a
+						>
+					</td>
+					<td>
+						<a
+							href="page-transitions-page.html"
+							data-transition="slidefade"
+							class="ui-btn ui-corner-all ui-shadow ui-btn-inline"
+							>page</a
+						>
+					</td>
+				</tr>
+				<tr>
+					<th><h3>slide</h3></th>
+					<td>
+						<a
+							href="page-transitions-dialog.html"
+							data-rel="dialog"
+							data-transition="slide"
+							class="ui-btn ui-corner-all ui-shadow ui-btn-inline"
+							>dialog</a
+						>
+					</td>
+					<td>
+						<a
+							href="page-transitions-page.html"
+							data-transition="slide"
+							class="ui-btn ui-corner-all ui-shadow ui-btn-inline"
+							>page</a
+						>
+					</td>
+				</tr>
+				<tr>
+					<th><h3>slideup</h3></th>
+					<td>
+						<a
+							href="page-transitions-dialog.html"
+							data-rel="dialog"
+							data-transition="slideup"
+							class="ui-btn ui-corner-all ui-shadow ui-btn-inline"
+							>dialog</a
+						>
+					</td>
+					<td>
+						<a
+							href="page-transitions-page.html"
+							data-transition="slideup"
+							class="ui-btn ui-corner-all ui-shadow ui-btn-inline"
+							>page</a
+						>
+					</td>
+				</tr>
+				<tr>
+					<th><h3>slidedown</h3></th>
+					<td>
+						<a
+							href="page-transitions-dialog.html"
+							data-rel="dialog"
+							data-transition="slidedown"
+							class="ui-btn ui-corner-all ui-shadow ui-btn-inline"
+							>dialog</a
+						>
+					</td>
+					<td>
+						<a
+							href="page-transitions-page.html"
+							data-transition="slidedown"
+							class="ui-btn ui-corner-all ui-shadow ui-btn-inline"
+							>page</a
+						>
+					</td>
+				</tr>
+				<tr>
+					<th><h3>none</h3></th>
+					<td>
+						<a
+							href="page-transitions-dialog.html"
+							data-rel="dialog"
+							data-transition="none"
+							class="ui-btn ui-corner-all ui-shadow ui-btn-inline"
+							>dialog</a
+						>
+					</td>
+					<td>
+						<a
+							href="page-transitions-page.html"
+							data-transition="none"
+							class="ui-btn ui-corner-all ui-shadow ui-btn-inline"
+							>page</a
+						>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>

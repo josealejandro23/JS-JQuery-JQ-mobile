@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <p>Escoja los idiomas que sabe</p>
+   <form action="">
+      <input type="checkbox" name="" id="espanol"> Español 
+      <input type="checkbox" name="" id="ingles"> Inglés
+      <input type="checkbox" name="" id="frances"> Francés
+
+      <input type="button" value="Contar" onclick="contar()">
+   </form>
+
+   <form action="">
+      <input type="radio" name="estudios" id="primaria"> Primaria <br>
+      <input type="radio" name="estudios" id="secundaria"> secundaria <br>
+      <input type="radio" name="estudios" id="universidad"> universitarios <br>
+      <input type="button" value="Verificar" onclick="verificar()">
+   </form>
+</body>
+<script>
+   function contar(){
+      var a = 0;
+      if(document.getElementById("espanol").checked){
+         a++;
+      }
+      if(document.getElementById("ingles").checked){
+         a++;
+      }
+      if(document.getElementById("frances").checked){
+         a++;
+      }
+      alert("sabes: " + a + " idiomas")
+   }
+</script>
+
+<script>
+   function verificar(){
+      if(document.getElementById("primaria").checked){
+         alert("tiene estudios de primaria")
+      }
+      if(document.getElementById("secundaria").checked){
+         alert("tiene estudios de secundaria")
+      }
+      if(document.getElementById("universidad").checked){
+         alert("tiene estudios universitarios")
+      }
+   }
+</script>
+</html>

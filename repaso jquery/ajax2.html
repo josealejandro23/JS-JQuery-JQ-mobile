@@ -1,0 +1,17 @@
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+<script>
+	var settings = {
+		async: true,
+		url: "https://sserver.insoft.co/api/EsPrimo/",
+		method: "POST",
+		headers: {
+			authorization: "Basic InSoftPruebas",
+		},
+		data: '{"numero" : 9973}',
+	};
+
+	$.ajax(settings).done(function (response) {
+		console.log(response.status);
+	});
+</script>

@@ -1,0 +1,36 @@
+<!-- <script>
+  const vector = [10, 40, 60, 5];
+  for (let [indice, valor] of vector.entries())
+    document.write(`${valor} ocupa la posicion ${indice}<br><hr>`);
+</script>
+ -->
+
+<script>
+  const articulos = [
+    {
+      nombre: "sandía",
+      precio: 12,
+    },
+    {
+      nombre: "manzanas",
+      precio: 52,
+    },
+    {
+      nombre: "peras",
+      precio: 40,
+    },
+    {
+      nombre: "naranjas",
+      precio: 35,
+    },
+  ];
+  for(let articulo of articulos){
+      document.write(`${articulo.nombre} - ${articulo.precio} <br>`)
+  }
+  document.write('<hr>')
+  for(let articulo of articulos){
+      if(articulo.precio>30){
+          document.write(`${articulo.nombre} - ${articulo.precio} <br>`)
+      }
+  }
+</script>

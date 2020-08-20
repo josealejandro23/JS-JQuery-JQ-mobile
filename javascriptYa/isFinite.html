@@ -1,0 +1,33 @@
+<script>
+    var x1=120;
+    if (isFinite(x1)) //true
+      document.write('x1 tiene un valor finito que es el '+x1);
+    else
+      document.write('x1 no tiene un valor finito que es el '+x1);
+    document.write('<br>');
+    var x2=10e399;
+    if (isFinite(x2)) //false
+      document.write('x2 tiene un valor finito que es el '+x2);
+    else
+      document.write('x2 no tiene un valor finito que es el '+x2);
+    document.write('<br>');
+    var x3=-10e399;
+    if (isFinite(x3))  //false
+      document.write('x3 tiene un valor finito que es el '+x3);
+    else
+      document.write('x3 no tiene un valor finito que es el '+x3);
+    document.write('<br>');
+    var x4='juan';
+    if (isFinite(x4))  //false
+      document.write('x4 tiene un valor finito que es el '+x4);
+    else
+      document.write('x4 no tiene un valor finito que es el '+x4);
+  </script>
+
+  <hr>
+
+<script>
+    document.write(Number.MIN_VALUE + ' número mínimo que se puede almacenar en javascript');  // 5e-324
+    document.write('<br>');
+    document.write(Number.MAX_VALUE + ' número máximo que se puede almacenar en javascript');  // 1.7976931348623157e+308
+  </script>

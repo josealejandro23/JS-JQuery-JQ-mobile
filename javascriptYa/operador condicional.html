@@ -1,0 +1,19 @@
+<!-- El operador condicional ?: remplaza en algunos casos a estructuras if/else sencillas con 
+    el objetivo de escribir un código más compacto o corto. -->
+
+ <!--    <script>
+        var v1=prompt('Ingrese primer valor:','');
+        var v2=prompt('Ingrese segundo valor:','');
+        v1=parseInt(v1);
+        v2=parseInt(v2);
+        var mayor;
+        v1>v2 ? mayor=v1 : mayor=v2;
+        document.write('El mayor de los dos valores es:'+mayor);
+      </script> -->
+
+<script>
+    var salario = parseInt(prompt('ingrese el sueldo del trabajador'));
+    var descuento=0;
+    salario > 10000 ? descuento = 0.9 : descuento = 0.95;
+    document.write('el salario es: ' + salario*descuento + ' se aplicó un descuento de ' + (1-descuento) + '%');
+</script>

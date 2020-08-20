@@ -1,0 +1,74 @@
+<!-- <script>
+	function consultar(callback) {
+		url = "https://sserver.insoft.co/api/EsPrimo";
+		msn = { numero: 9973 };
+		init = {
+			method: "POST",
+			headers: { Authorization: "Basic InSoftPruebas" },
+			body: JSON.stringify(msn),
+		};
+		fetch(url, init)
+			.then((dato) => dato.json())
+			.then((dato) => callback(dato));
+	}
+
+	consultar((res) => {
+		console.log(res);
+	});
+</script> -->
+
+<!-- <script>
+	function promesa() {
+		return new Promise((resolve, reject) => {
+			url = "https://sserver.insoft.co/api/EsPrimo";
+			msn = { numero: 9973 };
+			var xml = new XMLHttpRequest();
+
+			xml.open("POST", url);
+			xml.setRequestHeader("Authorization", "Basic InSoftPruebas");
+			xml.send(JSON.stringify(msn));
+			xml.onreadystatechange = function () {
+				if (this.readyState == 4) {
+					var res = this.responseText;
+					res = JSON.parse(res);
+					resolve(res);
+				} else if (this.status >= 400) {
+					reject(new Error("falla al consultar"));
+				}
+			};
+		});
+	}
+
+	async function respuesta() {
+		var dato = await promesa();
+		console.log(dato.respuesta.primo);
+	}
+
+   respuesta(); 
+
+	/* promesa()
+      .then(res =>console.log(res.respuesta.primo))
+      .catch(e => console.log(e)) */ 
+</script> -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+	function consulta(cb) {
+		var url = "https://sserver.insoft.co/api/EsPrimo";
+		var mns = { numero: 9973 };
+		var xml = new XMLHttpRequest();
+		xml.open("post", url);
+      xml.setRequestHeader("Authorization", "Basic InSoftPruebas");
+		xml.onreadystatechange = function () {
+			if (this.readyState == 4) {
+				var res = this.responseText;
+				res = JSON.parse(res);
+				cb(res);
+			}
+		};
+		xml.send(JSON.stringify(mns));
+	}
+
+	consulta((dato) => {
+		console.log(dato.respuesta.primo);
+	});
+</script>

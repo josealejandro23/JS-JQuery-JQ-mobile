@@ -1,0 +1,17 @@
+<script>
+    var vector = [1,2,3,4,1,2,3,4,2,0];
+    document.write('vector inicial: <br>');
+    for(var i = 0; i<vector.length;i++){
+      document.write(vector[i] + '<br>');
+    }
+    for(i = 0;i<vector.length;i++){
+      if(vector[i]==2){
+        vector.splice(i,1,1,1);
+      }
+    }
+    document.write('vector después de eliminar los elementos "2": <br>');
+    for(var i = 0; i<vector.length;i++){
+      document.write(vector[i] + '<br>');
+    }
+
+  </script>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ejemplo de JavaScript</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+
+<script>
+  var cadena = prompt("ingrese una palabra o texto");
+  cadena = cadena.toLowerCase();
+  var long = cadena.length;
+  var mitad = "";
+  var inverso = "";
+  var separada = "";
+  var vocales = 0;
+  var palabras;
+
+  for(let i = 0; i < long/2; i++){
+    mitad = mitad + cadena[i];
+  }
+  document.write(mitad + "<br>");
+
+  document.write(cadena[long-1] + "<br>");
+
+  for(let i = 0; i < long; i++){
+    inverso = inverso + cadena[long-1-i];
+  }
+  document.write(inverso + "<br>");
+
+  for(let i = 0; i < long; i++){
+    if(i != long - 1){
+      separada = separada + cadena[i] + "-";
+    }else{
+      separada = separada + cadena[i];
+    }
+  }
+  document.write(separada + "<br>");
+
+  for(let i = 0; i < long; i++){
+    if(cadena[i] == "a" || cadena[i] == "e" || cadena[i] == "i" || cadena[i] == "o" || cadena[i] == "u"){
+      vocales++
+    }
+  }
+  document.write("la cantidad de vocales es: " + vocales + "<br> <br>");
+
+  palabras = cadena.split(" ");
+  for(let i = 0; i < palabras.length; i++){
+    document.write(palabras[i] + "<br>");
+  }
+</script>  
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!-- Evento 'load': El evento load se dispara cuando el contenido del archivo HTML y las referencias a todos los recursos asociados (imágenes, hojas de estilo etc.) se han cargado en memoria del navegador.
+Evento 'DOMContentLoaded': El evento DOMContentLoaded se dispara cuando el contenido del archivo HTML se ha cargado en el navegador, sin necesitar esperar imágenes, hojas de estilo etc.
+Es muy conveniente en la mayoría de las veces inicializar script de JavaScript utilizando éste evento en lugar del evento 'load'. Todos los navegadores modernos disponen del evento 'DOMContentLoaded'. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post" action="#" id="formulario1">
+        Ingrese nombre:
+        <input type="text" id="usuario" name="usuario" size="20">
+        <br>
+        Ingrese clave:
+        <input type="password" id="clave" name="clave" size="20">
+        <br>
+        <input type="submit" id="confirmar" name="confirmar" value="Confirmar">
+      </form>  
+</body>
+</html>
+  
+  <script>
+   window.addEventListener('load',inicio,false);
+   //window.addEventListener('DOMContentLoaded',inicio,false); esta línea lanza a "inicio" cuando la estructura html
+   //esté cargada y no espera la carga de imágenes ni hojas de estilo ni demás recursos
+  
+  function inicio()
+  {
+    document.getElementById("formulario1").addEventListener('submit',validar,false);
+  }
+  
+  function validar(evt)
+  {
+     var usu=document.getElementById("usuario").value;
+     var cla=document.getElementById("clave").value;
+     if (usu.length==0 || cla.length==0)
+     {
+       alert('El nombre de usuario o clave está vacío');
+       evt.preventDefault();
+     }
+  }
+  </script>

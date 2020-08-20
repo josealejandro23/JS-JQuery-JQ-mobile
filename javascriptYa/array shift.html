@@ -1,0 +1,22 @@
+<script>
+    var vector = [];
+    var valor;
+
+    while(valor =!0){
+        valor = parseInt(prompt('ingrese un valor'));
+        if(valor == 0){
+            break
+        }else{
+            if(valor > 100){
+                vector.unshift(valor);
+            }else{
+                vector.push(valor);
+            }
+        }
+    }
+
+    document.write('el último valor ingresado es: ' + vector.shift() + '<br>');
+    for(let i = 0; i<vector.length; i++){
+        document.write(vector[i] + '<br>');
+    }
+</script>

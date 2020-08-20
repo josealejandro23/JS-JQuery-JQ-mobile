@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function persona(nombre, edad){
+            this.nombre = nombre;
+            this.edad = edad;
+            this.mostrarNombre = mostrarNombre;
+        }
+
+        function mostrarNombre(){
+            document.write(this.nombre + ' tiene una edad de: ' + this.edad + '<br>');
+        }
+
+        var arreglo = new Array(4);
+        arreglo[0] = new persona('josé', 24);
+        arreglo[1] = new persona('juan', 66);
+        arreglo[2] = new persona('ana', 66);
+        arreglo[3] = new persona('luisa', 17);        
+
+        var aux = 0;
+        for(var i=0; i<arreglo.length; i++){
+            if(arreglo[i].edad >= arreglo[aux].edad){
+                aux = i;
+            }
+        }
+        for(i = 0; i < arreglo.length; i++){
+            if (arreglo[i].edad==arreglo[aux].edad){
+                arreglo[i].mostrarNombre();
+            }
+        }
+    </script>
+</body>
+</html>

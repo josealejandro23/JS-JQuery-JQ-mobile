@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div" style="background-color: yellow; height: 200px; width: 200px;"></div>
+</body>
+
+<script>
+    window.addEventListener('DOMContentLoaded',inicio,false);
+
+    function inicio(){
+        document.getElementById('div').addEventListener('mousedown', oprimido,false);
+        document.getElementById('div').addEventListener('mouseup', suelto,false);
+    }
+
+    function oprimido(){
+        document.getElementById('div').style.backgroundColor = 'red';
+    }
+
+    function suelto(){
+        document.getElementById('div').style.backgroundColor = 'yellow';
+    }
+</script>
+</html> 
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Ejemplo de JavaScript</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+
+  <div style="width:200px;height:200px;background:#ff0000" id="recuadro1">
+  </div>
+
+<script>
+  addEventListener('DOMContentLoaded',inicio,false);
+
+  function inicio()
+  {
+    document.getElementById('recuadro1').addEventListener('mousedown',presion1,false);
+    document.getElementById('recuadro1').addEventListener('mouseup',presion2,false);
+  }
+
+  function presion1()
+  {
+    document.getElementById('recuadro1').style.backgroundColor='#ffff00';
+  }
+
+  function presion2()
+  {
+    document.getElementById('recuadro1').style.backgroundColor='#ff0000';
+  }
+</script>
+  
+</body>
+</html> -->

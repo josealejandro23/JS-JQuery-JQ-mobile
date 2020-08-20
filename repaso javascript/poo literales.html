@@ -1,0 +1,43 @@
+<script>
+	var persona1 = {
+		nombre: "Alejandro",
+		apellido: "vargas",
+		saldo: 0,
+		depositar: function (monto) {
+			this.saldo += monto;
+		},
+		retirar: function (monto) {
+			this.saldo -= monto;
+		},
+		verSaldo() {
+			document.write(
+				"El saldo de " +
+					this.nombre +
+					" " +
+					this.apellido +
+					" es: " +
+					this.saldo +
+					"<br>"
+			);
+		},
+	};
+
+	persona1.verSaldo();
+	persona1.depositar(500);
+	persona1.verSaldo();
+	persona1.retirar(200);
+	persona1.verSaldo();
+	persona1.deuda = 1000;
+	persona1.verDeuda = function () {
+		document.write(
+			"La deuda de " +
+				this.nombre +
+				" " +
+				this.apellido +
+				" es: " +
+				this.deuda +
+				"<br>"
+		);
+	};
+	persona1.verDeuda();
+</script>

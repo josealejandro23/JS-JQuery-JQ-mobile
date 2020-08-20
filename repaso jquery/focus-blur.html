@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ejemplo de jQuery</title>
+		<meta charset="UTF-8" />
+	</head>
+	<body>
+		<form action="#" method="post">
+			<input
+				type="text"
+				name="buscar"
+				id="buscar"
+				value="Buscar..."
+				size="20"
+			/>
+		</form>
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	</body>
+</html>
+<script>
+	let x = $(document);
+	x.ready(inicializarEventos);
+
+	function inicializarEventos() {
+		let x = $("#buscar");
+      x.blur(pierdeFoco)
+		x.focus(tomaFoco);
+	}
+
+   function pierdeFoco(){
+      if($("#buscar").val())
+			alert("saliste del control y escribiste: " + $("#buscar").val())
+		else
+			alert("Saliste del input y no escribiste nada")
+   }
+
+	function tomaFoco() {
+		let x = $("#buscar");
+		x.attr("value", "");
+	}
+</script>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<form action="">
+			<label for="">Ingrese la clave</label>
+			<input type="password" id="clave" />
+			<input type="button" value="verificar" onclick="verificarClave()" />
+		</form>
+		<script>
+			function verificarClave(clave) {
+				var clave = document.getElementById("clave").value;
+				clave.length >= 5
+					? alert("clave correcta")
+					: alert("clave muy corta");
+			}
+		</script>
+	</body>
+</html>

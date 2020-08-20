@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+      const personas = [
+        {
+          nombre: "juan",
+          edad: 45,
+        },
+        {
+          nombre: "ana",
+          edad: 12,
+        },
+        {
+          nombre: "luis",
+          edad: 16,
+        },
+        {
+          nombre: "cristina",
+          edad: 76,
+        },
+      ];
+
+      document.write("<h1>Personas mayores de edad.</h1>");
+      for (let persona of personas) {
+        if (persona.edad >= 18) {
+          document.write(`${persona.nombre} y tiene ${persona.edad} años.<br>`);
+        }
+      }
+      document.write("<hr>");
+      for (const i in personas) {
+        if (personas[i].edad > 18) {
+          document.write(
+            `${personas[i].nombre} y tiene ${personas[i].edad} años.<br>`
+          );
+        }
+      }
+    </script>
+
+    <!-- <script>
+      const cadena = "Hola Mundo";
+      for (let letra of cadena) {
+        document.write(`${letra}<br>`);
+      }
+      document.write("<hr>");
+      for (var i in cadena) {
+        document.write(`${cadena[i]} <br>`);
+      }
+    </script> -->
+
+    <!-- <script>
+      const vector = [10, 40, 60, 5];
+      let suma = 0;
+      for (let elemento of vector){ 
+          suma += elemento;
+        }
+      document.write(`La suma de todos los elementos del vector es:${suma}`);
+      document.write('<hr>')
+      suma = 0;
+      for(var i in vector){
+          suma += vector[i]
+      }
+      document.write(`La suma de todos los elementos del vector es:${suma}`);
+    </script> -->
+  </body>
+</html>

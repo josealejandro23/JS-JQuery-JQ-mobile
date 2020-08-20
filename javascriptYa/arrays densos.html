@@ -1,0 +1,49 @@
+<!-- <script>
+    var arreglo= [];
+    var x = 1;
+    var i = 0;
+    var suma = 0;
+    while(x != 0){
+        var x = parseInt(prompt('ingrese un número'));
+        if(x == 0){
+            break;
+        }else{
+            arreglo[i] = x;
+        }
+        suma = suma + arreglo[i];
+        i++;
+    }
+
+    document.write('se ingresaron ' + arreglo.length + ' números antes de ingresar el cero <br>');
+    document.write('la suma de los elementos del arreglo es: ' + suma);
+</script> -->
+
+<script>
+    var vector1 = [],
+    vector2 = [],
+    vector3 = [];
+    var indice1 = 0;
+    var indice2 = 0;
+
+    for(let i = 0; i<10; i++){
+        vector1[i] = parseInt(Math.random()*500);
+    }
+
+    for(i = 0; i < vector1.length; i++){
+        if(vector1[i] < 250){
+            vector2[indice1] = vector1[i];
+            indice1++;
+        }else{
+            vector3[indice2] = vector1[i];
+            indice2++;
+        }
+    }
+
+    document.write('El tamaño del vector 2 es: ' + vector2.length + '<br>');
+    document.write('El tamaño del vector 3 es: ' + vector3.length + '<br>');
+
+    document.write('vector 1: ' + vector1 + '<br>');
+    document.write('vector 2: ' + vector2 + '<br>');
+    document.write('vector 3: ' + vector3);
+
+</script>

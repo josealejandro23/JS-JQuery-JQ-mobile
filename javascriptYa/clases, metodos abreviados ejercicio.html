@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const jugador1 = {
+        nombre: "José",
+        puntos: 0,
+        imprimir() {
+          document.write(
+            `El jugador es ${this.nombre} <br> Los puntos son: ${this.puntos} <br>`
+          );
+        },
+        aumentarPuntos() {
+          this.puntos += Math.trunc(Math.random() * 10 + 1);
+        },
+        verificar() {
+          this.puntos > 7
+            ? document.write(`Ganó con ${this.puntos}`)
+            : document.write(`Perdió con ${this.puntos}`);
+        },
+      };
+      jugador1.imprimir();
+      jugador1.aumentarPuntos();
+      jugador1.imprimir();
+      jugador1.verificar();
+    </script>
+  </body>
+</html>

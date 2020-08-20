@@ -1,0 +1,23 @@
+<script>
+    var vector = [];
+    var random;
+    var contador=0;
+    var aux = true;
+
+    while(aux){
+        for(var i = 0; i<2; i++){
+            random = parseInt(Math.random()*10+1);
+            vector.push(random);
+        }
+        if(vector[0] == vector[1] && vector[0] == vector[2] && vector[0] == vector[3] && vector[0] == vector[4] && vector[0] == vector[5] && vector[0] == vector[6] && vector[0] == vector[7] && vector[0] == vector[8] && vector[0] == vector[9]){
+            break;
+        }else{
+            contador++;
+        }
+    }
+
+    for(i=0;i<vector.length;i++){
+        document.write(vector[i] + '<br>');
+    }
+    document.write('cantidad de intentos: ' + contador);
+</script>

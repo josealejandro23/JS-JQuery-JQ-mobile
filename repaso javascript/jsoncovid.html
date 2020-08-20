@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script
+			src="https://code.jquery.com/jquery-3.5.1.js"
+			integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+			crossorigin="anonymous"
+		></script>
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+			integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+			crossorigin="anonymous"
+		/>
+	</head>
+	<body>
+		<h2>Pruebas covid</h2>
+		<table border="1px solid collapse" class="table table-dark">
+			<thead>
+				<tr>
+					<th>Departamento</th>
+					<th>Municipio</th>
+					<th>Muestras</th>
+				</tr>
+			</thead>
+			<tbody id="Tbody"></tbody>
+		</table>
+	</body>
+</html>
+<script>
+	$(document).ready(() => {
+		consulta();
+	});
+
+	function consulta() {
+		try {
+			fetch("https://www.datos.gov.co/resource/jrb3-mnpr.json")
+				.then((datos) => datos.json())
+				.then(mostrar)
+				.catch(error);
+		} catch (e) {
+			errorTry(e);
+		}
+	}
+
+	function mostrar(datos) {
+		var tabla = document.getElementById("Tbody");
+		for (const dato of datos) {
+			tabla.insertAdjacentHTML(
+				"beforeend",
+				"<tr><td>" +
+					dato.departamento +
+					"</td><td>" +
+					dato.municipio +
+					"</td><td>" +
+					dato.total_procesada +
+					"</td></tr>"
+			);
+		}
+	}
+
+	function errorTry(e) {
+		console.log("error en la consulta, bloque try");
+		console.error(e);
+	}
+
+	function error(e) {
+		console.log("Error en la consulta, fetch");
+		console.error(e);
+	}
+</script>

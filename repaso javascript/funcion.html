@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			var dia = prompt("ingrese el día");
+			var mes = parseInt(prompt("ingrese el mes"));
+			var ano = prompt("ingrese el año");
+
+			var fecha = formatoFecha(dia, mes, ano);
+			document.write(fecha);
+
+			function formatoFecha(dia, mes, ano) {
+				switch (mes) {
+					case 1:
+						mes = "enero";
+						break;
+					case 2:
+						mes = "febreo";
+						break;
+					case 3:
+						mes = "marzo";
+						break;
+					case 4:
+						mes = "abril";
+						break;
+					case 5:
+						mes = "mayo";
+						break;
+					case 6:
+						mes = "junio";
+						break;
+					case 7:
+						mes = "julio";
+						break;
+					case 8:
+						mes = "agosto";
+						break;
+					case 8:
+						mes = "septiembre";
+						break;
+					case 10:
+						mes = "octubre";
+						break;
+					case 11:
+						mes = "noviembre";
+						break;
+					case 12:
+						mes = "diciembre";
+						break;
+					default:
+						"valor equivocado";
+				}
+				return "Hoy es " + dia + " de " + mes + " del " + ano;
+			}
+		</script>
+	</body>
+</html>

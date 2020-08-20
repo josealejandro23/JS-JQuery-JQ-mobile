@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const festivos = new Set([
+            '01/01',
+            '05/03',
+            '23/05'
+        ]);
+
+        var dia = prompt('ingrese el día')
+        var mes = prompt('ingrese el mes')
+
+        if(festivos.has(`${dia}/${mes}`)) alert(`el día es festivo`)
+        else{
+            alert('no es festivo')
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!-- <script>
+	var url = "https://sserver.insoft.co/api/EsPrimo";
+	var mensaje = { numero: 9973 };
+	var xml = new XMLHttpRequest();
+
+	xml.open("POST", url, true);
+	xml.setRequestHeader("authorization", "Basic InSoftPruebas");
+
+	xml.onreadystatechange = function () {
+		if (this.readyState == 4) {
+			var res = JSON.parse(this.responseText);
+			console.log(res);
+		}
+	};
+	xml.send(JSON.stringify(mensaje));
+</script> -->
+
+<!-- <script>
+	function peticion(callback) {
+		var url = "https://sserver.insoft.co/api/EsPrimo";
+		var mensaje = { numero: 9973 };
+		var xml = new XMLHttpRequest();
+
+		xml.open("POST", url, true);
+		xml.setRequestHeader("authorization", "Basic InSoftPruebas");
+
+		xml.onreadystatechange = function () {
+			if (this.readyState == 4) {
+				var res = JSON.parse(this.responseText);
+				callback(res);
+			}
+		};
+		xml.send(JSON.stringify(mensaje));
+	}
+
+   peticion((dato) => console.log(dato))
+</script> -->
+
+<script>
+	var promesa = new Promise((resolve, reject) => {
+		var url = "https://sserver.insoft.co/api/EsPrimo";
+		var mensaje = { numero: 9973 };
+		var xml = new XMLHttpRequest();
+
+		xml.open("POST", url, true);
+		xml.setRequestHeader("authorization", "Basic InSoftPruebas");
+
+		xml.onreadystatechange = function () {
+			if (this.readyState == 4) {
+				var res = JSON.parse(this.responseText);
+				resolve(res);
+			}
+		};
+		xml.send(JSON.stringify(mensaje));
+	});
+
+	async function llamarPromesa() {
+		var res = await promesa;
+		console.log(res.respuesta);
+	}
+
+	llamarPromesa();
+</script>

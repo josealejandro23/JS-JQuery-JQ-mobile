@@ -1,0 +1,26 @@
+<!-- <script>
+    var vec=new Array(10);
+    var f;
+    for(f=0;f<vec.length;f++)
+    {
+      vec[f]=parseInt(Math.random()*1001);
+    }
+    document.write('vector original <br>')
+    for(f=0;f<vec.length;f++)
+    {
+      document.write(vec[f] + '<br>');
+    }
+    var cadena=vec.toString();
+    document.write(cadena);
+  </script> -->
+
+  <script>
+    var vec=[1,2,3,4,5,6,7,8,9,10];
+    var cadena1=vec.toString();
+    var cadena2=vec.join();
+    if (cadena1===cadena2){
+        document.write('son iguales los dos string');
+    }else{
+        document.write('no son iguales los dos string');
+    }  
+  </script>

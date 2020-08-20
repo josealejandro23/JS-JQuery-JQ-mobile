@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    <!-- <script>
+      const arreglo1 = [10, 20, 30];
+      const arreglo2 = Array.from(arreglo1);
+      arreglo1.fill(5);
+      console.log(arreglo1); // [5,5,5]
+      console.log(arreglo2); // [10,20,30]
+    </script> -->
+
+    <!-- <script>
+    const titulo = "Alejandro";
+    const arreglo1 = Array.from(titulo);
+    console.log(arreglo1);        
+    console.log(arreglo1.length); 
+  </script> -->
+
+    <!-- <script>
+      const mapa1 = new Map();
+      mapa1.set("casa", "house");
+      mapa1.set("rojo", "red");
+      mapa1.set("auto", "car");
+      const arreglo1 = Array.from(mapa1);
+      console.log(arreglo1); // [["casa", "house"], ["rojo", "red"], ["auto", "car"]]
+      console.log(arreglo1.length); // 3
+    </script> -->
+
+    <!-- <script>
+      const conjunto1 = new Set();
+      conjunto1.add("C");
+      conjunto1.add("Pascal");
+      conjunto1.add("PHP");
+      conjunto1.add("Python");
+      const arreglo1 = Array.from(conjunto1);
+      console.log(arreglo1); // ["C", "Pascal", "PHP", "Python"]
+      console.log(arreglo1.length); // 4
+    </script> -->
+
+    <!-- El método from puede recibir un segundo parámetro al que podemos pasar una función y retorne el valor
+    a almacenar en el nuevo arreglo -->
+    <script>
+        const arreglo1 = [10, 20, 30];
+        const arreglo2 = Array.from(arreglo1, (elemento) => elemento * 2);
+        console.log(arreglo2); // [20, 40, 60]
+      </script
+  </body>
+</html>

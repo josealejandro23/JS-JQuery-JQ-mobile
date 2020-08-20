@@ -1,0 +1,52 @@
+<!-- <script>
+/* Veremos ahora otra forma muy utilizada en Javascript para definir clases. Esta forma se la llama Objetos literales
+Esta metodología consiste en definir una lista de propiedades y sus valores. Veamos con un ejemplo esta técnica: */
+
+    var cliente1 = {
+        nombre: 'Juan',
+        deposito: 0,
+        imprimir: function ()
+        {
+          document.write(this.nombre+'<br>');
+          document.write(this.deposito+'<br>');
+        },
+        depositar: function(monto) {
+          this.deposito=this.deposito+monto;
+        },
+        extraer: function(monto) {
+          this.deposito=this.deposito-monto;
+        }                  
+     };
+   
+     cliente1.imprimir();
+     cliente1.depositar(1000);
+     document.write('Estado luego de depositar 1000 pesos</br>');
+     cliente1.imprimir();
+     cliente1.extraer(200);
+     document.write('Estado luego de extraer 200 pesos</br>');
+     cliente1.imprimir();
+</script> -->
+
+<script>
+  var jugador1 = {
+    nombre: "alejandro",
+    puntos: 0,
+    imprimir: function () {
+      document.write(this.nombre + " tiene: " + this.puntos + "<br>");
+    },
+    aumentarPuntos: function () {
+      this.puntos = this.puntos + parseInt(Math.random() * 10 + 1);
+    },
+    verificar: function () {
+      if (this.puntos > 7) {
+        document.write("ganó con: " + this.puntos);
+      } else {
+        document.write("perdiste con: " + this.puntos);
+      }
+    },
+  };
+
+  jugador1.imprimir();
+  jugador1.aumentarPuntos();
+  jugador1.verificar();
+</script>

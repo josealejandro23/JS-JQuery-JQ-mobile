@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ejemplo de jQuery</title>
+		<meta charset="UTF-8" />
+	</head>
+
+	<body>
+		<form action="pagina1.php" method="post" id="formulario">
+			Ingrese nro:<input type="text" name="nro" id="nro" size="10" /><br />
+			<input type="submit" value="Calcular el cuadrado" id="enviar" />
+			<div id="resultados"></div>
+		</form>
+
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	</body>
+</html>
+<script>
+	let x = $(document);
+	x.ready(inicializarEventos);
+
+	function inicializarEventos() {
+		let x = $("#enviar");
+		x.click(presionSubmit);
+	}
+
+	function presionSubmit() {
+		let v = $("#nro").val();
+		$.get("pagina2.php", { numero: v }, llegadaDatos);
+		return false;
+	}
+
+	function llegadaDatos(datos) {
+		alert(datos);
+	}
+</script>

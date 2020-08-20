@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <table id="tabla1" class="table table-striped table-dark"></table>
+            </div>
+        </div>
+    </body>
+    <script>
+        fetch("https://www.datos.gov.co/resource/xdk5-pm3f.json")
+            .then((response) => response.json())
+            //.then((datos) => {console.log(datos)});
+            .then((datos) => {
+                let cad =
+                    "<tr><th>Departamento</th><th>Ciudad</th><th>Region</th></tr>";
+                for (let lugar of datos) {
+                    
+                    if(lugar.departamento == 'Cauca'){
+                        cad += `<tr><td>${lugar.departamento}</td>
+                        <td>${lugar.municipio}</td>
+                        <td>${lugar.region}</td></tr>`;
+                    }
+                }
+                document.getElementById("tabla1").innerHTML = cad;
+            });            
+</script>
+</html>

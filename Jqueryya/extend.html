@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>jQuery.extend demo</title>
+		<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+	</head>
+	<body>
+		<div id="log"></div>
+		<div id="log2"></div>
+
+		<script>
+			var object1 = {
+				apple: 0,
+				banana: { weight: 52, price: 100 },
+				cherry: 97,
+				mora: false,
+			};
+			var object2 = {
+				banana: { price: 200 },
+				durian: 100,
+				mora: true,
+			};
+
+			// fusión de los objetos
+			$.extend(true, object1, object2);
+			$("#log").append(JSON.stringify(object1));
+			console.log(JSON.stringify(object1));
+
+			var defaults = { validate: false, limit: 5, name: "foo" };
+			var options = { validate: true, name: "bar" };
+
+			// Merge defaults and options, without modifying defaults
+			var settings = $.extend({}, defaults, options);
+
+			// Assuming JSON.stringify - not available in IE<8
+			$("#log2").append(
+				"<div><b>defaults -- </b>" + JSON.stringify(defaults) + "</div>"
+			);
+			$("#log2").append(
+				"<div><b>options -- </b>" + JSON.stringify(options) + "</div>"
+			);
+			$("#log2").append(
+				"<div><b>settings -- </b>" + JSON.stringify(settings) + "</div>"
+			);
+
+			var jose = {
+				nombre: "jose",
+				apellido: "vargas",
+				hobbies: {
+					al_aire_libre: ["correr", "jugar", "nadar"],
+					en_casa: ["leer", "estudiar", "cocinar"],
+				},
+				películas: ["cenicienta"],
+				casado: false,
+				edad: 24,
+			};
+
+			var alejandro = {
+				nombre: "alejandro",
+				apellido: "Gutiérrez",
+				hobbies: {
+					al_aire_libre: ["caminar", "ver el cielo", "trotar"],
+					en_casa: ["comer", "ver películas", "cocinar"],
+				},
+				películas: ["forrest Gump", "the truman show"],
+				casado: true,
+				edad: 10,
+			};
+
+			var nuevoobjeto = $.extend(true,{}, alejandro, jose);
+			console.log(JSON.stringify(nuevoobjeto));
+		</script>
+	</body>
+</html>

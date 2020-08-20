@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<form action="">
+			<p>ingrese máximo 10 caracteres</p>
+			<textarea
+				name="mensaje"
+				id="mensaje"
+				cols="30"
+				rows="10"
+            oninput="contarRestantes()"
+            
+			></textarea>
+			<p>Le quedan <span id="restantes">10</span> caracteres</p>
+		</form>
+	</body>
+	<script>
+		function contarRestantes() {
+			var long = document.getElementById("mensaje").value.length;
+         var res = 10 - long;
+         var texto;
+         document.getElementById("restantes").innerHTML = res;
+         if(long < 10){
+            texto = document.getElementById("mensaje").value;
+         }else{
+            document.getElementById("mensaje").value = texto;
+         }
+		}
+	</script>
+</html>

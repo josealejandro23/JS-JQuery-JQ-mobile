@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Bienvenido ingrese sus datos de registro</h2>
+    <hr>
+    <form action="">
+        Ingrese su usuario <br>
+        <input type="text" name="" id="nombre" onfocus="vaciar(this)" onblur="verificar(this)" value="Nombre"><hr>
+        Ingrese una contraseña entre 7 y 10 caracteres <br>
+        <input type="text" name="" id="clave" onblur="contraseña(this)"> <hr>
+        <input type="button" name="" id="" value="Enviar">
+    </form>
+
+    <script>
+        function vaciar(a){
+            a.value = "";
+        }
+
+        function verificar(a){
+            if(a.value == ""){
+                alert("ingresa un nombre de usuario");
+            }
+        }
+
+        function contraseña(a){
+            if(a.value.length < 7 || a.value.length > 10){
+                alert("contraseña muy larga o muy corta");
+                vaciar(a);
+            }else{
+                alert("todo ok");
+            }
+        }
+    </script>
+</body>
+</html>

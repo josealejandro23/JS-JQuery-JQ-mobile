@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ejemplo de jQuery</title>
+		<meta charset="UTF-8" />
+
+		<style>
+			.rayaY {
+				left: 200px;
+				height: 100vh;
+				width: 2px;
+				background-color: black;
+				z-index: 1;
+				position: relative;
+			}
+			.rayaX {
+				top: 200px;
+				height: 2px;
+				width: 100vw;
+				background-color: black;
+				z-index: 1;
+				position: absolute;
+			}
+         #coords{
+            position: absolute;
+         }
+		</style>
+	</head>
+
+	<body>
+		<div id="coords">
+			<p id="corx">coordenada x=</p>
+			<p id="cory">coordenada y=</p>
+		</div>
+		<div class="rayaY"></div>
+		<div class="rayaX"></div>
+
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	</body>
+</html>
+<script>
+	let x = $(document);
+	x.ready(inicializarEventos);
+
+	function inicializarEventos() {
+		let x = $(document);
+		x.mousemove(moverMouse);
+	}
+
+	function moverMouse(event) {
+		let x = $("#corx");
+		x.text("coordenada x=" + event.clientX);
+		x = $("#cory");
+		x.text("coordenada y=" + event.clientY);
+		$(".rayaY").css("left", event.clientX);
+		$(".rayaX").css("top", event.clientY);
+	}
+</script>

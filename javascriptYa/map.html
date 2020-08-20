@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Ejemplo de JavaScript</title>
+  <meta charset="UTF-8">
+</head>
+
+<body>
+  <script>
+      /* El método 'map' similar al método 'filter' retorna un arreglo cuyos elementos resultan
+       de las operaciones que se efectúan dentro de la función anónima que le pasamos como parámetro: */
+    const arreglo1 = [1, 2, 3, 4, 5];
+    // Generar un nuevo arreglo con los elementos del arreglo1 elevalos al cuadrado
+    const arreglo2 = arreglo1.map((elemento, indice, arreglo) => elemento ** 2);
+    console.log(arreglo2); //[1, 4, 9, 16, 25]
+  </script>
+</body>
+
+</html>

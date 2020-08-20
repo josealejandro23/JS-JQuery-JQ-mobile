@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    function verificarEntrada()
+    {
+      if (window.confirm('Desea salir del sitio e ingresar al periódico La Nación?'))
+      {
+        window.location='http://www.lanacion.com.ar';
+      }
+      else
+      {
+        window.alert('No hay problema');
+      }
+    }
+  </script>
+  
+  <button onClick="verificarEntrada()">Ingresar a La Nación</button>
+
+  <hr>
+
+  <button onclick="ingresar()">Ingresa a una página aleatoria</button>
+
+  <script>
+      function ingresar(){
+        var a = parseInt(Math.random()*3);
+        if(a == 0){
+            alert('vas a ir a google');
+            location = 'https://www.google.com';
+        }else if(a == 1){
+            alert('vas a ir a gmail');
+            location = 'https://www.gmail.com';
+        }else if(a == 2){
+            alert('vas a ir a youtube');
+            location = 'https://www.youtube.com';
+        }
+      }
+  </script>
+</body>
+</html>

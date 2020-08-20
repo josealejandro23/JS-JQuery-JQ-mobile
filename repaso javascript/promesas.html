@@ -1,0 +1,154 @@
+<!-- <script>
+	function promise(a, b) {
+		return new Promise((exito, fracaso) => {
+			setTimeout(() => {
+				exito(a*b);
+				fracaso(new Error("falla al calcular"));
+			}, 2000);
+
+			setTimeout(() => {
+				fracaso(new Error("falla al calcular"));
+			}, 3000);
+		});
+	}
+
+	/* promise(3, 4)
+		.then((res) => console.log(res))
+		.catch((fail) => console.log(fail)); */
+
+	async function llamarPromesa(a,b){
+		var res = await promise(a,b);
+		console.log(res)
+	}
+
+	llamarPromesa(3,3)
+</script> -->
+
+<!-- <script>
+	function randomDelayed(max = 10, expected = 5, delay = 1000) {
+		return new Promise((respuesta, error) => {
+			const number = Math.floor(Math.random() * max);
+			setTimeout(
+				() =>
+					number > expected
+						? respuesta("el número random fue: " + number)
+						: error(new Error("número menor al esperado: " + number)),
+				delay
+			);
+		});
+	}
+
+/* 	randomDelayed(10, 5, 1500)
+		.then((res) => console.log(res))
+		.catch((error) => console.error(error)); */
+
+	async function iniciar(a, b, c) {
+		try {
+			var res = await randomDelayed(a, b, c);
+			console.log(res);
+		}
+		catch(e){
+			console.error(e)
+		}
+	}
+
+	iniciar(10,5)
+</script> -->
+
+<!-- <script>
+	function espera(a, b) {
+		return new Promise((resolve, reject) => {
+			const random = Math.round(Math.random() * 2000);
+
+			setTimeout(() => {
+				if (a > b) {
+					console.log(
+						"el valor a es mayor que el valor b. El valor random fue: " +
+							random
+					);
+					console.log("la multiplicación de ambos es: " + multi(a, b));
+					resolve(paso2(a, b));
+				} else {
+					reject(
+						new Error("a es insuficiente, el valor random fue: " + random)
+					);
+				}
+			}, random);
+		});
+	}
+
+	var multi = (a, b) => {
+		return a * b;
+	};
+
+	var suma = (a, b) => {
+		return a + b;
+	};
+
+	function paso2(a, b) {
+		console.log("ejecutando el paso 2");
+		return new Promise((resolve, reject) => {
+			setTimeout(() => {
+				if (a > b) {
+					console.log("la suma de ambos es: " + suma(a, b));
+					resolve("exito en el paso 2");
+				} else reject(new Error("fallo en el paso 2"));
+			}, 3000);
+		});
+	}
+
+	espera(10, 5)
+		.then((res2) => console.log(res2))
+		.catch((error) => console.log(error));
+</script>  -->
+
+<script>
+	var c = Math.round(Math.random()*15);
+
+	function vector(a) {
+		var vec = new Array();
+		for (var i = 0; i < a; i++) {
+			vec.push(i + 1);
+		}
+		return vec;
+	}
+
+	const promesa = new Promise((resolve, reject) => {
+		if (c < 10) {
+			resolve(vector(c));
+		} else {
+			reject(new Error(`"C" vale 10 o más, vector muy largo: ${c}`));
+		}
+	});
+
+	function imprimir(arreglo) {
+		console.log("le pasamos el valor al otro then y es: ");
+		arreglo.forEach(element => {
+			console.log(element)
+		});
+	}
+
+	function multiplicarVector(vec) {
+		vec.forEach((ele,i) => {
+			vec[i] = ele*2
+		});
+		return vec;
+	}
+
+	/* promesa
+		.then((res) => multiplicarVector(res))
+		.then((dato) => imprimir(dato))
+		.catch((error) => console.error(error)); */
+
+	async function llamada() {
+		try {
+			var res = await promesa;
+			var vectorMultiplicado = multiplicarVector(res);
+			imprimir(vectorMultiplicado);
+		} catch (e) {
+			console.log(e);
+		}
+	}
+
+	llamada();
+</script>

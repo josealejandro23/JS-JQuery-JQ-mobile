@@ -1,0 +1,36 @@
+<script>
+    var vec=[10,20,30,40,50];
+    for(var indice in vec)
+    {
+      document.write(vec[indice]+'-');
+    }
+    document.write('<br>')
+    for(var elemento of vec){
+      document.write(elemento + '-')
+    }
+  </script>
+  <hr>
+  <!-- <script>
+    var vec=[10,,30,,50];
+    document.write('Recorredo del vector con un for clásico<br>');
+    var f;
+    for(f=0;f<vec.length;f++)
+    {
+      document.write(vec[f]+'-');
+    }
+    document.write('<br>');
+    document.write('Recorredo del vector con un for in<br>');
+    for(var indice in vec)
+    {
+      document.write(vec[indice]+'-');
+    }
+  </script>
+  <hr>
+  <h5>For each</h5>
+  <script>
+    var vec = [10, 20, 30, 40, 50];
+    vec.forEach(function (componente, indice) {
+      document.write('Posición:' + indice + ' = ');
+      document.write(componente + '<br>');
+    })
+  </script> -->

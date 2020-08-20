@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Bienvenido, al examen virtual</h3>
+    1. ¿Cómo se dice perro en inglés? <br>
+    <select name="" id="pregunta1">
+        <option value="1">cat</option>
+        <option value="2">dog</option>
+        <option value="3">pig</option>
+    </select><br>
+    2. ¿Cómo se dice gato en inglés? <br>
+    <select name="" id="pregunta2">
+        <option value="1">cat</option>
+        <option value="2">room</option>
+        <option value="3">lion</option>
+    </select><br>
+    3. ¿Cómo se dice mesa en inglés? <br>
+    <select name="" id="pregunta3">
+        <option value="1">table</option>
+        <option value="2">room</option>
+        <option value="3">lion</option>
+    </select>
+    <br>
+    <input type="button" name="" id="" value="Enviar respuestas" onclick="verificar()"><br>
+    Usted tuvo <input type="text" name="" id="resultado"> preguntas correctas
+
+    <script>
+        function verificar(){
+            primera = document.getElementById('pregunta1');
+            segunda = document.getElementById('pregunta2');
+            tercera = document.getElementById('pregunta3');
+            res1 = parseInt(primera.options[primera.selectedIndex].value);
+            res2 = parseInt(primera.options[segunda.selectedIndex].value);
+            res3 = parseInt(primera.options[tercera.selectedIndex].value);
+            var total = 0;
+
+            if(res1 == 2){
+                total++;
+            }
+            if(res2 == 1){
+                total++;
+            }
+            if(res3 == 1){
+                total++;
+            }
+
+            document.getElementById('resultado').value = total;
+        }
+    </script>
+</body>
+</html>

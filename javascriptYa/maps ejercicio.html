@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="lista"></div>
+  </body>
+  <script>
+    const paises = new Map();
+    paises.set("Colombia", 50);
+    paises.set("USA", 300);
+    paises.set("Canadá", 45);
+    paises.set("China", 1200);
+    paises.set("Ecuador", 20);
+
+    var lista = document.getElementById("lista");
+
+    var s = '<ul>'
+
+    for (let [elemento, valor] of paises) {
+      s += `<li> ${elemento} = ${valor} </li>`;
+    }
+    s += '</ul>' 
+    lista.innerHTML = s;
+    window.addEventListener("DOMContentLoaded", inicio, false);
+  </script>
+</html>
