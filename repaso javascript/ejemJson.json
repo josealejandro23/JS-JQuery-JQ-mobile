@@ -83,3 +83,41 @@
 		}
 	}
 }
+
+{
+	"version": "1.4.5A",
+	"patente": 322523,
+	"autor" : "Carlos kash",
+	"detalles":{
+		"fecha":"2015-04-02T12:00:000Z",
+		"soporte":{
+			"windows":true,
+			"mac":true,
+			"linux":false,
+		},
+		"apodo":"the matrix",
+	},
+	"capacidades":["rapidez","compresion","tolerancia"],
+	"descripcion":[
+		{
+			"win" : true,
+			"mac" : false,
+			"linux" : "error" 
+		},
+		{
+			"compresion":{
+				"win" : "5%",
+				"mac" : "10%",
+				"linux" : false
+			}
+		},
+		{
+			"tolerancia":{
+				"win" : true,
+				"mac" : true,
+				"linux": false
+			}
+		}
+	]
+}
+

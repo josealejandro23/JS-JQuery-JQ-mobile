@@ -17,7 +17,7 @@
 
 	peticion((res) => console.log(res.respuesta.primo));
 
-/* 	function timeOut(cb) {
+	/* 	function timeOut(cb) {
 		setTimeout(() => {
 			cb(Math.round(Math.random() * 5));
 		}, 1000);
@@ -26,4 +26,50 @@
 	timeOut(function (a) {
 		console.log(a ** 2);
 	}); */
+
+	function consultar(callback) {
+		var dir = "https://sserver.insoft.co/api/EsPrimo";
+		var msm = { numero: 9973 };
+
+		var peti = new XMLHttpRequest();
+
+		peti.open("post", dir, true);
+		peti.setRequestHeader("authorization", "Basic InSoftPruebas");
+		peti.onreadystatechange = function () {
+			if (this.readyState == 4) {
+				var resp = this.responseText;
+				resp = JSON.parse(resp);
+				callback(resp);
+			}
+		};
+
+		peti.send(JSON.stringify(msm));
+	}
+
+	consultar((dato) => console.log(dato));
+
+	function promesa() {
+		return new Promise((resolve, reject) => {
+			fetch(dir, {
+				method: "post",
+				headers: { authorization: "basic InSoftPruebas" },
+				body: JSON.stringify({ numero: 9973 }),
+			})
+				.then((data) => data.json())
+				.then((data) => resolve(data))
+				.catch((e) => reject(e));
+		});
+	}
+
+	async function llamarPromesa() {
+		try {
+			var resu = await promesa();
+			console.log(resu);
+		}
+		catch(e){
+			console.log(e);
+		}
+	}
+
+	llamarPromesa();
 </script>

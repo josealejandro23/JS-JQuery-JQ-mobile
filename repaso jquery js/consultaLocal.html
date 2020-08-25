@@ -1,0 +1,23 @@
+<script>
+	function consulta(cb){
+      const url = "json.json";
+      const pet = new XMLHttpRequest();
+      pet.open("get",url);
+      pet.onreadystatechange = function() {
+         if(this.readyState == 4){
+            var resp = this.responseText;
+            resp = JSON.parse(resp);
+            cb(resp);
+         }
+      }
+      pet.send();
+   }
+
+   consulta(imprimir);
+
+   function imprimir(datos){
+      for (const i in datos) {
+         console.log(i + ': ' + datos[i]);
+      }
+   }
+</script>
