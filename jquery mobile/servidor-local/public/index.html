@@ -1,33 +1,151 @@
 <!DOCTYPE html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>WEBAPP JQuery</title>
-		<link
-			rel="stylesheet"
-			href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"
-		/>
-	</head>
-	<body>
-		<div data-role="page" id="uno">
-			<div data-role="header">
-		      <div class="ui-body-b">
-					<div data-role="navbar">
-			        <ul>
-			            <li><a href="#uno" data-icon="star" class="ui-btn-icon-bottom ui-bnt-active">Inicio</a></li>
-			            <li><a href="#dos" data-icon="calendar" class="ui-btn-icon-bottom">Calendario</a></li>
-			            <li id="prueba"><a href="#dos" data-icon="calendar" class="ui-btn-icon-bottom">Calendario</a></li>
-			        </ul>
-			      </div><!-- /navbar -->
-				</div>
-			</div><!-- /header -->
-			<div role="main" class="ui-content"></div>
-			<div data-role="footer"></div>
-		</div>
-	</body>
-	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-	<script src="http://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-	<script src="./scripts.js"></script>
-	</html>
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.css">
+   <link rel="stylesheet" href="estilos.css">
+   <title>ejemplos jquery mobile</title>
+</head>
+<body>
+   <div data-role="page" id="inicio">
+      <header data-role="header">
+         <nav data-role="navbar">
+            <ul>
+               <li><a data-transition="pop" href="#inicio" data-rel="inicio" data-icon="home">Inicio</a></li>
+               <li><a href="#empresa"  data-transition="flip" data-rel="empresa" data-icon="star">La empresa</a></li>
+               <li><a href="#nosotros" data-transition="turn"  data-rel="nosotros" data-icon="user">Sobre nosotros</a></li>
+            </ul>
+         </nav>
+         <a data-icon="bars" data-iconpos="notext" href="#menu">Menú</a>
+      </header>
+      <div data-role="panel" data-display="overlay" id="menu">
+         <ul data-role="listview">
+            <li><a href="#" data-rel="close" data-role="button" data-icon="delete">Cerrar</a></li>
+            <li><a href="#inicio" data-rel="inicio" data-role="button" data-transition="flow" data-icon="home">Inicio</a></li>
+            <li><a href="#empresa" data-rel="empresa" data-role="button" data-transition="flow" data-icon="star">Mira la empresa</a></li>
+            <li><a href="#nosotros" data-rel="nosotros" data-role="button" data-transition="flow" data-icon="user">Conoce sobre nosotros</a></li>
+         </ul>
+      </div>
+      <div role="main" class="ui-content">
+         <button style="font-size: 2rem;" id="grande">A</button>
+         <button style="font-size: 1rem;" id="pequeno">A</button>
+         <div class="ui-grid-a">
+            <div class="ui-block-a">
+               <h3 class="ui-bar ui-bar-a ui-corner-all">Título del área</h3>
+               <div id="boton"></div>
+               <div class="ui-body ui-body-a ui-corner-all">
+                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse accumsan blandit fermentum. Pellentesque cursus mauris purus, auctor commodo mi ullamcorper nec. Donec semper mattis eros, nec condimentum ante sollicitudin quis. Etiam orci sem, porttitor ut tellus nec, blandit posuere urna. Proin a arcu non lacus pretium faucibus. Aliquam sed est porttitor, ullamcorper urna nec, vehicula lorem. Cras porttitor est lorem, non venenatis diam convallis congue.</p>
+               </div>
+            </div>
+            <div class="ui-block-b">
+              <div class="ui-body ui-body-a ui-corner-all">
+                  <h3>Heading</h3>
+                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse accumsan blandit fermentum. Pellentesque cursus mauris purus, auctor commodo mi ullamcorper nec. Donec semper mattis eros, nec condimentum ante sollicitudin quis. Etiam orci sem, porttitor ut tellus nec, blandit posuere urna. Proin a arcu non lacus pretium faucibus. Aliquam sed est porttitor, ullamcorper urna nec, vehicula lorem. Cras porttitor est lorem, non venenatis diam convallis congue.</p>
+               </div>
+               <a href="#dialogo" data-rel="dialog" data-role="button" data-icon="comment" data-iconpos="bottom" data-transition="slide">Mira un popup</a>
+            </div>
+         </div>
+      </div>
+      <footer data-role="footer"></footer>
+   </div>
+
+   <div data-role="page" id="empresa">
+      <header data-role="header">
+         <nav data-role="navbar">
+            <ul>
+               <li><a data-transition="pop" href="#inicio" data-rel="inicio">Inicio</a></li>
+               <li><a href="#empresa"  data-transition="flip" data-rel="empresa">La empresa</a></li>
+               <li><a href="#nosotros" data-transition="turn"  data-rel="nosotros">Sobre nosotros</a></li>
+            </ul>
+         </nav>
+      </header>
+      <div role="main" class="ui-content">
+         <h3>A continuación mostramos un elemento colapsable</h3>
+         <div class="colapsables">
+            <div data-role="collapsible">
+               <h1>Elemento a</h1> 
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, eius.</p>
+            </div>
+            <div data-role="collapsible" data-theme="b">
+               <h2>Elemento b</h2>
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, optio.</p>
+            </div>
+            <div data-role="collapsible" data-theme="a">
+               <h2>Elemento c</h2>
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, optio.</p>
+            </div>  
+         </div>
+
+         <h3>A continuación un acordeón</h3>
+         <div data-role="collapsible-set">
+            <div data-role="collapsible">
+               <h1>Elemento a</h1> 
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, eius.</p>
+            </div>
+            <div data-role="collapsible" data-theme="b">
+               <h2>Elemento b</h2>
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, optio.</p>
+            </div>
+            <div data-role="collapsible" data-theme="a">
+               <h2>Elemento c</h2>
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, optio.</p>
+            </div>  
+         </div>
+      </div>
+      <footer data-role="footer"></footer>
+   </div>
+
+   <div data-role="page" id="nosotros" data-theme="b">
+      <header data-role="header">
+         <nav data-role="navbar">
+            <ul>
+               <li><a data-transition="pop" href="#inicio" data-rel="inicio">Inicio</a></li>
+               <li><a href="#empresa"  data-transition="flip" data-rel="empresa">La empresa</a></li>
+               <li><a href="#nosotros" data-transition="turn"  data-rel="nosotros">Sobre nosotros</a></li>
+            </ul>
+         </nav>
+      </header>
+      <div role="main" class="ui-content">
+         <div class="ui-grid-d">
+            <div class="ui-block-a">
+               <p>Columna 1</p>
+               <form>
+                   <label for="flip-checkbox-1">Color rojo</label>
+                   <div id="chequear"><input type="checkbox" data-role="flipswitch" name="flip-checkbox-1" ></div>
+               </form>
+            </div>
+            <div class="ui-block-b"><p id="col2">Columna 2</p></div>
+            <div class="ui-block-c"><p>Columna 3</p></div>
+            <div class="ui-block-d"><p>Columna 4</p></div>
+            <div class="ui-block-e"><p>Columna 5</p></div>
+         </div>
+      </div>
+      <footer data-role="footer">
+         <nav data-role="navbar">
+            <ul>
+               <li><button data-transition="slidedown" class="ui-icon-home ui-btn-icon-notext"><a href="#inicio" data-transition="slidedown">inicio</a></button></li>
+               <li><button data-transition="slidedown" class="ui-icon-star ui-btn-icon-notext"><a href="#empresa" data-transition="slidedown">empresa</a></button></li>
+               <li><button data-transition="slidedown" class="ui-icon-user ui-btn-icon-notext"><a href="#nosotros" data-transition="slidedown">nosotros</a></button></li>
+            </ul>
+         </nav>
+      </footer>
+   </div>
+
+   <div data-role="page" id="dialogo" data-theme="b">
+      <header data-role="header" data-position="fixed">
+         <h1>dialogo</h1>
+      </header>
+		<section role="main" class="ui-content">
+			<div class="ui-body ui-body-a">
+            <p>página como caja de dialogo</p>
+         </div>
+		</section>
+		<footer data-role="footer" data-position="fixed">
+   </div>
+   <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+   <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+   <script src="http://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+   <script src="scripts.js"></script>
+</body>
+</html>
