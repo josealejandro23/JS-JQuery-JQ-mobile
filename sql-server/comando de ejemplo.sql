@@ -271,6 +271,78 @@ case edad /*evaluar campo edad*/
 end
 from usuarios
 
+/*IF, ELSE*/
+if exists (consulta a verificar)
+begin
+	sentencias SQL caso positivo
+end
+else
+begin
+	sentencias sql caso negativo
+end
+
+/*Declarar variables y asignar valores*/
+declare nombreVariable TipoVariable;
+set @nombreVariable = valor;
+
+declare @id tinyint;
+set @id = 23;
+
+/*Crear procedimientos*/
+create procedure nombreProcedimiento as
+sentencias SQL a almacenar
+
+exec nombreProcedimiento
+
+drop proc nombreProcedimiento /*Borrar procedimiento*/
+
+create procedure consultarHombres as
+begin
+	select nombre,usuario, edad from usuarios where sexo = 'M'/*Puedo elegir la información que estará disponible dentro del procedimiento*/
+end
+exec consultarHombres
+
+/*Procedimientos con valores, funciones*/
+create procedure nombreProcedimiento
+@parametro1 tipo,   /*Si especifico el valor del parámetro será usado como valor por defecto cuando en la invocación no se pase un valor*/
+@parametroN tipo    /*@parametroN varchar(10) = 'pepito', en este caso si no paso el valor del param se utilizará pepito*/
+@parametroSalida tipo output /*Podemos crear una variable q contiene el resultado de un procedimiento*/
+as
+consultas que usan los parámetros
+
+exec nombreProcedimiento parametro1, parametroN
+/*En caso de tener variable de salida se ejecuta así*/
+declare @variableSalida tipo;
+exec nombreProcedimiento parametros, @variableSalida output;
+select @variableSalida;
+
+create procedure ConsultaMayores
+@edad int = 23,
+@sexo varchar(10)
+as 
+begin
+	select * from usuarios where edad >= @edad and sexo = @sexo;
+end
+
+exec ConsultaMayores 18,'F' /*En este caso 18 sobreescribe el valor por defecto 23 de @edad*/
+
+/*Ejemplo procedimiento con variables de entrada y salida*/
+create procedure promedioEdad 
+@sexo varchar(10),
+@resultado1 int output,
+@resultado2 int output
+as
+begin
+	set @resultado1 = (select avg(edad) from usuarios where sexo = @sexo)
+	set @resultado2 = (select sum(edad) from usuarios where sexo = @sexo)
+end
+
+declare @res1 int;
+declare @res2 int;
+exec promedioEdad 'F', @res1 output, @res2 output;
+select @res1;
+select @res2;
+	
 
 
 
