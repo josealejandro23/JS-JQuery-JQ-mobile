@@ -305,8 +305,8 @@ exec consultarHombres
 /*Procedimientos con valores, funciones*/
 create procedure nombreProcedimiento
 @parametro1 tipo,   /*Si especifico el valor del parámetro será usado como valor por defecto cuando en la invocación no se pase un valor*/
-@parametroN tipo    /*@parametroN varchar(10) = 'pepito', en este caso si no paso el valor del param se utilizará pepito*/
-@parametroSalida tipo output /*Podemos crear una variable q contiene el resultado de un procedimiento*/
+@parametroN tipo,    /*@parametroN varchar(10) = 'pepito', en este caso si no paso el valor del param se utilizará pepito*/
+@parametroSalida tipo output /*Podemos crear una variable que contendrá el resultado de un procedimiento*/
 as
 consultas que usan los parámetros
 
@@ -319,6 +319,7 @@ select @variableSalida;
 create procedure ConsultaMayores
 @edad int = 23,
 @sexo varchar(10)
+with encryption --agrega encriptación al procedimiento
 as 
 begin
 	select * from usuarios where edad >= @edad and sexo = @sexo;
@@ -343,6 +344,61 @@ exec promedioEdad 'F', @res1 output, @res2 output;
 select @res1;
 select @res2;
 	
+/*Return, la sentencia return retorna un valor resultado de un procedimiento e ignora las sentencias posteriores
+a ella.*/
+
+create procedure nombreProcedimiento
+@entrada1 int,
+@entradaN int,
+as begin
+	if (condición) /*el uso del return tiene más sentido si se usa dentro de una sentencia IF*/
+		return valor /*Este valor será la salida del procedimiento, por facilidad es más fácil devolver un valor numérico*/
+	sentencias adicionales /*Estas sentencias serán ignoradas si se accede al return previamente*/
+end
+
+declare @retorno int; /*Esta variable contendrá el valor del return*/
+exce @retorno = nombreProcedimiento val1, valN;
+select @retorno
+
+/*Comando de ayuda sp*/
+sp_help; /*muestra todos los objetos almacenados en la base de datos*/
+sp_helptext nombreObjeto /*muestra los datos del objeto especificado*/
+sp_stored_procedures /*muestra todos los procedimientos almecenados y sus detalles*/
+sp_depends nombreObjeto /*muestra la relación de un objeto con los demás objetos en la DB*/
+sp_depends promedioEdad
+
+/*Triggers, estos disparadores se lanzan automáticamente después de un evento insert, update o delete sobre una tabla,
+no pueden ser invocados directamente y no aceptan o devuelven parámetros*/
+create trigger nombreTrigger
+on nombreTablaAEscuchar
+for Evento --update, delete o insert
+as
+begin
+	sentencias
+end;
+
+insert into estudiante values (07,'pedro','charal','casadehab',null,34) --esta sentencia invoca al trigger siguiente
+
+create trigger inscribirAlumno  -- se invoca al realizar la sentencia insert anterior
+on estudiante
+for insert
+as
+begin
+	insert into inscripcion values ('ins06', 10,07,'002',null);
+end
+
+/*Habilitar o deshabilitar los triggers, esto permite que funciones o no los triggers*/
+alter table tablaDondeActuaElTrigger
+enable trigger nombreTrigger  --enable o disable
+
+
+
+
+
+
+
+
+
 
 
 
