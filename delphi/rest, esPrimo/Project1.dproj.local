@@ -2,8 +2,14 @@
 <BorlandProject>
 	<Transactions>
     <Transaction>2020/09/17 14:29:23.000.323,=E:\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+<<<<<<< HEAD
     <Transaction>2020/09/17 21:13:41.000.368,E:\Desktop\ejercicios desarrollo web\Javascript\delphi\rest, esPrimo\Unit1.dfm=E:\Documentos\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
     <Transaction>2020/09/17 21:13:41.000.368,E:\Desktop\ejercicios desarrollo web\Javascript\delphi\rest, esPrimo\Unit1.pas=E:\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
     <Transaction>2020/09/17 21:13:43.000.552,E:\Desktop\ejercicios desarrollo web\Javascript\delphi\rest, esPrimo\Project1.dproj=E:\Documentos\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+=======
+    <Transaction>2020/09/17 21:13:41.000.368,E:\Documentos\Embarcadero\Studio\Projects\Unit1.dfm=E:\Desktop\ejercicios desarrollo web\Javascript\delphi\rest, esPrimo\Unit1.dfm</Transaction>
+    <Transaction>2020/09/17 21:13:41.000.368,E:\Documentos\Embarcadero\Studio\Projects\Unit1.pas=E:\Desktop\ejercicios desarrollo web\Javascript\delphi\rest, esPrimo\Unit1.pas</Transaction>
+    <Transaction>2020/09/17 21:13:43.000.552,E:\Documentos\Embarcadero\Studio\Projects\Project1.dproj=E:\Desktop\ejercicios desarrollo web\Javascript\delphi\rest, esPrimo\Project1.dproj</Transaction>
+>>>>>>> 751b8eccb54934fad2bb01c5529171ad97eae5ca
   </Transactions>
 </BorlandProject>
