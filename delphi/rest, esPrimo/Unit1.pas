@@ -41,52 +41,51 @@ procedure TForm1.Button1Click(Sender: TObject);
 var
 res : TJSONObject;
 begin
-  try
-    res := TJSONObject.Create;
-    RESTRequest1.Execute; memo1.Text := RESTResponse1.Content;
-    res := TJSONObject.ParseJSONValue(RESTResponse1.Content) as TJSONObject;
-    memo2.Text := res.GetValue<string>('respuesta.primo');
-  finally
-    FreeAndNil(res);
-  end;
+   try
+      res := TJSONObject.Create;
+      RESTRequest1.Execute;
+      memo1.Text := RESTResponse1.Content;
+      res := TJSONObject.ParseJSONValue(RESTResponse1.Content) as TJSONObject;
+      memo2.Text := res.GetValue<string>('respuesta.primo');
+   finally
+      FreeAndNil(res);
+   end;
 end;
-
 
 //consulta creada a mano
 procedure TForm1.Button2Click(Sender: TObject);
 var
-  cliente : TRESTClient;
-  request : TRESTRequest;
-  response : TRESTResponse;
-  res : TJSONObject;
+   cliente : TRESTClient;
+   request : TRESTRequest;
+   response : TRESTResponse;
+   res : TJSONObject;
 begin
-  cliente := TRESTClient.Create(nil);
-  request := TRESTRequest.Create(nil);
-  response := TRESTResponse.Create(nil);
-  res := TJSONObject.Create;
-  try
-    cliente.BaseURL := 'https://sserver.insoft.co/api/EsPrimo';
-    request.Client := cliente;
-    request.Response := response;
+    cliente := TRESTClient.Create(nil);
+    request := TRESTRequest.Create(nil);
+    response := TRESTResponse.Create(nil);
+   try
+      cliente.BaseURL := 'https://sserver.insoft.co/api/EsPrimo';
+      request.Client := cliente;
+      request.Response := response;
 
-    request.Params.AddItem('Authorization','Basic InSoftPruebas',pkHTTPHEADER,[poDoNotEncode]);
-    request.Method := rmPost;
-    request.AddBody(format('{"numero":%s}',[edit1.text]),ctAPPLICATION_JSON);
-    request.Execute;
+      request.Params.AddItem('Authorization','Basic InSoftPruebas',pkHTTPHEADER,[poDoNotEncode]);
+      request.Method := rmPost;
+      request.AddBody(format('{"numero":%s}',[edit1.text]),ctAPPLICATION_JSON);
+      request.Execute;
 
-    memo1.Text := response.Content;
-    res := TJSONObject.ParseJSONValue(response.Content) as TJSONObject;
-    memo2.Text := res.GetValue<string>('respuesta.primo');
-  finally
-    FreeAndNil(cliente);
-    FreeAndNil(request);
-    FreeAndNil(response);
-    FreeAndNil(res);
-  end;
+      memo1.Text := response.Content;
+      res := TJSONObject.ParseJSONValue(response.Content) as TJSONObject;
+      memo2.Text := res.GetValue<string>('respuesta.primo');
+   finally
+      FreeAndNil(cliente);
+      FreeAndNil(request);
+      FreeAndNil(response);
+      FreeAndNil(res);
+   end;
 end;
 procedure TForm1.FormCreate(Sender: TObject);
 begin
-  ReportMemoryLeaksOnShutdown := true;
+   ReportMemoryLeaksOnShutdown := true;
 end;
 
 end.

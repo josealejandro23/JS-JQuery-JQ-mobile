@@ -1,6 +1,8 @@
 {
    "nombre":"insoft",
-   "año":2020,
-   "locacion":"manizales",
-   "activo":true
+   "año":"2020",
+   "locacion":"manizales,caldas",
+   "activo":true,
+   "valor" : "",
+   "método" : "socrático"
 }
