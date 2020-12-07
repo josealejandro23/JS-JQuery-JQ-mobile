@@ -282,7 +282,7 @@ begin
 end
 
 /*Declarar variables y asignar valores*/
-declare nombreVariable TipoVariable;
+declare @nombreVariable TipoVariable;
 set @nombreVariable = valor;
 
 declare @id tinyint;
@@ -390,20 +390,6 @@ end
 /*Habilitar o deshabilitar los triggers, esto permite que funciones o no los triggers*/
 alter table tablaDondeActuaElTrigger
 enable trigger nombreTrigger  --enable o disable
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
